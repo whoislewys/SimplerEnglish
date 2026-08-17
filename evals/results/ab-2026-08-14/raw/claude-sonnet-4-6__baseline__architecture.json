@@ -1,0 +1,33 @@
+{
+  "text": "sqlpipe is a three-stage pipeline for efficiently extracting Postgres data into S3-hosted Parquet files.\n\n**Reader** \u2014 A dedicated process connects to Postgres and streams query results in fixed-size row batches using a server-side cursor, keeping memory usage bounded regardless of result set size.\n\n**Converter** \u2014 Each batch is handed off to a converter that maps Postgres column types to their Parquet equivalents and encodes rows into a Parquet row group. Row groups are buffered in memory until they reach a configurable size threshold, at which point they are flushed to a staging buffer ready for upload.\n\n**Uploader** \u2014 A multipart S3 upload is initiated at the start of each output file. Completed row groups are sent as sequential parts, with per-part retry logic to handle transient network failures. Once all parts are uploaded, the multipart upload is finalized, producing a valid Parquet object in S3.",
+  "input_tokens": 3,
+  "prompt_tokens": 19924,
+  "output_tokens": 212,
+  "duration_ms": 5914,
+  "cost_usd": 0.0268362,
+  "model": "claude-sonnet-4-6",
+  "condition": "baseline",
+  "scenario": "architecture",
+  "type": "descriptive",
+  "lint": {
+    "type": "descriptive",
+    "words": 145,
+    "sentences": 7,
+    "mean_sentence_words": 20.7,
+    "longest_sentence_words": 29,
+    "violations": {
+      "sentence_over_limit": 3,
+      "contraction": 0,
+      "banned_modal": 0,
+      "perfect_tense": 0,
+      "ing_clause": 0,
+      "semicolon": 0,
+      "latin_abbrev": 0,
+      "slop_word": 0,
+      "trailing_condition": 0,
+      "synonym_rotation": 0
+    },
+    "violations_total": 3,
+    "violations_per_100w": 2.07
+  }
+}

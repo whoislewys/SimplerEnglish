@@ -1,0 +1,33 @@
+{
+  "text": "## Architecture\n\nsqlpipe moves rows from Postgres to S3 as Parquet files. Three processes work in sequence through in-memory channels.\n\nThe **reader** connects to Postgres and streams rows in fixed-size batches. It sends each batch to the converter through a channel. If the connection fails, the reader stops and reports an error.\n\nThe **converter** receives each batch and transforms the rows into a Parquet row group. It maps each Postgres column type to a Parquet type. It then sends each row group to the uploader.\n\nThe **uploader** writes row groups to S3 as a single multipart object. Each row group becomes one part of the upload. If a part fails, the uploader retries it three times before it reports an error. When all parts are complete, the uploader finalizes the object on S3.",
+  "input_tokens": 3,
+  "prompt_tokens": 25783,
+  "output_tokens": 584,
+  "duration_ms": 14999,
+  "cost_usd": 0.112581,
+  "model": "claude-opus-4-6",
+  "condition": "skill-v1",
+  "scenario": "architecture",
+  "type": "descriptive",
+  "lint": {
+    "type": "descriptive",
+    "words": 131,
+    "sentences": 12,
+    "mean_sentence_words": 10.9,
+    "longest_sentence_words": 15,
+    "violations": {
+      "sentence_over_limit": 0,
+      "contraction": 0,
+      "banned_modal": 0,
+      "perfect_tense": 0,
+      "ing_clause": 0,
+      "semicolon": 0,
+      "latin_abbrev": 0,
+      "slop_word": 0,
+      "trailing_condition": 0,
+      "synonym_rotation": 0
+    },
+    "violations_total": 0,
+    "violations_per_100w": 0.0
+  }
+}

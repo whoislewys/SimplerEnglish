@@ -1,0 +1,13 @@
+{
+  "model": "claude-opus-4-5-20251101",
+  "scenario": "readme-intro",
+  "variant": "skill-v1",
+  "order1_base_first": {
+    "a_score": 6,
+    "b_score": 9
+  },
+  "order2_variant_first": {
+    "a_score": 9,
+    "b_score": 6
+  }
+}

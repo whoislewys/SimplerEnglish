@@ -1,0 +1,13 @@
+{
+  "model": "claude-sonnet-5",
+  "scenario": "troubleshooting",
+  "variant": "skill-v2",
+  "order1_base_first": {
+    "a_score": 3,
+    "b_score": 8
+  },
+  "order2_variant_first": {
+    "a_score": 9,
+    "b_score": 4
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "text": "## Getting Started\n\nsqlpipe moves data between databases. You define the source, the destination, and the query in a configuration file.\n\n### Install sqlpipe\n\nRun this command in your terminal:\n\n```\ncurl -sSL https://get.sqlpipe.dev | sh\n```\n\nMake sure that the `sqlpipe` binary is on your PATH. Run `sqlpipe version` to see the installed version.\n\n### Create the configuration file\n\nCreate a file named `sqlpipe.yaml` in your working directory. Add the source and destination connections:\n\n```yaml\nsource:\n  type: postgres\n  host: localhost\n  port: 5432\n  database: app\n  username: reader\n  password: ${SOURCE_PASSWORD}\n\ndestination:\n  type: bigquery\n  project: my-project\n  dataset: analytics\n\nquery: \"SELECT * FROM events WHERE created_at > '2024-01-01'\"\n```\n\nSet your database credentials as environment variables before the first run.\n\n### Run sqlpipe\n\nStart the transfer:\n\n```\nsqlpipe run --config sqlpipe.yaml\n```\n\nsqlpipe reads the query from the source and writes the results to the destination. The terminal shows the row count and the transfer time when the operation is complete.\n\nIf the transfer fails, read the error message in the terminal output. Most errors come from incorrect credentials or network rules that block the connection.",
+  "input_tokens": 3,
+  "prompt_tokens": 26038,
+  "output_tokens": 1122,
+  "duration_ms": 21563,
+  "cost_usd": 0.128573,
+  "model": "claude-opus-4-6",
+  "condition": "skill-v1",
+  "scenario": "getting-started",
+  "type": "procedural",
+  "lint": {
+    "type": "procedural",
+    "words": 124,
+    "sentences": 13,
+    "mean_sentence_words": 9.5,
+    "longest_sentence_words": 15,
+    "violations": {
+      "sentence_over_limit": 0,
+      "contraction": 0,
+      "banned_modal": 0,
+      "perfect_tense": 0,
+      "ing_clause": 0,
+      "semicolon": 0,
+      "latin_abbrev": 0,
+      "slop_word": 0,
+      "trailing_condition": 1,
+      "synonym_rotation": 0
+    },
+    "violations_total": 1,
+    "violations_per_100w": 0.81
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "text": "sqlpipe has three components: a reader, a converter, and an uploader. Each component runs in a separate process. They communicate through buffered queues.\n\nThe reader connects to Postgres and streams rows in fixed-size batches. It does not load the full table into memory. When a batch is full, the reader sends it to the converter.\n\nThe converter takes each batch and maps Postgres column types to Parquet types. Then it writes the batch as a Parquet row group. When the row group is complete, the converter sends it to the uploader.\n\nThe uploader writes each row group to S3 as a multipart object. If a part fails, the uploader retries that part. The uploader does not restart the full upload. When all parts are uploaded, S3 assembles them into one object.",
+  "input_tokens": 3,
+  "prompt_tokens": 25480,
+  "output_tokens": 2899,
+  "duration_ms": 37348,
+  "cost_usd": 0.10604820000000001,
+  "model": "claude-sonnet-4-6",
+  "condition": "skill-v1",
+  "scenario": "architecture",
+  "type": "descriptive",
+  "lint": {
+    "type": "descriptive",
+    "words": 131,
+    "sentences": 14,
+    "mean_sentence_words": 9.4,
+    "longest_sentence_words": 13,
+    "violations": {
+      "sentence_over_limit": 0,
+      "contraction": 0,
+      "banned_modal": 0,
+      "perfect_tense": 0,
+      "ing_clause": 0,
+      "semicolon": 0,
+      "latin_abbrev": 0,
+      "slop_word": 0,
+      "trailing_condition": 0,
+      "synonym_rotation": 0
+    },
+    "violations_total": 0,
+    "violations_per_100w": 0.0
+  }
+}

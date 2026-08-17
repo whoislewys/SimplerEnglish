@@ -1,0 +1,13 @@
+{
+  "model": "claude-opus-4-6",
+  "scenario": "error-message",
+  "variant": "skill-v2",
+  "order1_base_first": {
+    "a_score": 1,
+    "b_score": 0
+  },
+  "order2_variant_first": {
+    "a_score": 10,
+    "b_score": 3
+  }
+}

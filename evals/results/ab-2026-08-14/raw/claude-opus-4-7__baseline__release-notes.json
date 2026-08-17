@@ -1,0 +1,33 @@
+{
+  "text": "# sqlpipe v2.0 Release Notes\n\nThis release brings a breaking API change, a new ingestion mode, and significant performance gains.\n\n**Breaking changes**\n\n- `/v2/users`: the `name` field has been split into `first_name` and `last_name`. Clients constructing or parsing user payloads must update to the new schema before upgrading. There is no compatibility shim \u2014 requests using the legacy `name` field will be rejected.\n\n**New features**\n\n- Added an `--incremental` flag to sync only rows changed since the last run, tracked via a watermark column. Ideal for large tables where full reloads are expensive.\n\n**Performance**\n\n- Parquet writes are approximately 40% faster, thanks to a rewritten column encoder and better buffer reuse. No configuration changes required \u2014 existing pipelines benefit automatically on upgrade.",
+  "input_tokens": 6,
+  "prompt_tokens": 27436,
+  "output_tokens": 275,
+  "duration_ms": 5586,
+  "cost_usd": 0.058312,
+  "model": "claude-opus-4-7",
+  "condition": "baseline",
+  "scenario": "release-notes",
+  "type": "descriptive",
+  "lint": {
+    "type": "descriptive",
+    "words": 119,
+    "sentences": 9,
+    "mean_sentence_words": 12.9,
+    "longest_sentence_words": 20,
+    "violations": {
+      "sentence_over_limit": 0,
+      "contraction": 0,
+      "banned_modal": 0,
+      "perfect_tense": 1,
+      "ing_clause": 0,
+      "semicolon": 0,
+      "latin_abbrev": 0,
+      "slop_word": 0,
+      "trailing_condition": 0,
+      "synonym_rotation": 0
+    },
+    "violations_total": 1,
+    "violations_per_100w": 0.84
+  }
+}

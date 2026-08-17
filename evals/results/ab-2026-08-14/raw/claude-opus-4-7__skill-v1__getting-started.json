@@ -1,0 +1,33 @@
+{
+  "text": "# Getting started\n\nsqlpipe moves rows from a source database to a target database. This section shows how to install sqlpipe, write a configuration file, and start the first run.\n\n## Install sqlpipe\n\n1. Run `curl -sSL https://get.sqlpipe.dev | sh` in a terminal.\n2. The script installs the binary to `/usr/local/bin/sqlpipe`.\n3. To make sure that the install is complete, run `sqlpipe --version`.\n\n## Write the configuration file\n\n1. Create a file named `sqlpipe.yaml` in the working directory.\n2. Add the connection string for the source database under `source.dsn`.\n3. Add the connection string for the target database under `target.dsn`.\n4. List each table to copy under `tables`.\n\n## Start the first run\n\n1. Run `sqlpipe run --config sqlpipe.yaml`.\n2. sqlpipe reads the file, connects to both databases, and copies the rows.\n3. If a table fails, sqlpipe stops and prints the error to the terminal.",
+  "input_tokens": 6,
+  "prompt_tokens": 34923,
+  "output_tokens": 340,
+  "duration_ms": 6061,
+  "cost_usd": 0.14034500000000003,
+  "model": "claude-opus-4-7",
+  "condition": "skill-v1",
+  "scenario": "getting-started",
+  "type": "procedural",
+  "lint": {
+    "type": "procedural",
+    "words": 128,
+    "sentences": 12,
+    "mean_sentence_words": 9.8,
+    "longest_sentence_words": 16,
+    "violations": {
+      "sentence_over_limit": 0,
+      "contraction": 0,
+      "banned_modal": 0,
+      "perfect_tense": 0,
+      "ing_clause": 0,
+      "semicolon": 0,
+      "latin_abbrev": 0,
+      "slop_word": 0,
+      "trailing_condition": 0,
+      "synonym_rotation": 0
+    },
+    "violations_total": 0,
+    "violations_per_100w": 0.0
+  }
+}

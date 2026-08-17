@@ -1,0 +1,33 @@
+{
+  "text": "Incident Report\n\nBetween 14:02 and 14:31 UTC, 12% of API requests failed with HTTP 502 errors.\n\nCause: A deploy removed the cache warmup step. Without this step, the cache was empty. The backend could not answer requests in time, and the gateway returned HTTP 502.\n\nActions: The on-call engineer found the problem at 14:20. The team reverted the deploy at 14:27. The cache became full again, and error rates returned to normal at 14:31.\n\nNext steps: We will add a test to make sure that the cache warmup step is always part of the deploy.",
+  "input_tokens": 6,
+  "prompt_tokens": 27813,
+  "output_tokens": 195,
+  "duration_ms": 4257,
+  "cost_usd": 0.060353,
+  "model": "claude-opus-4-7",
+  "condition": "skill-v2",
+  "scenario": "incident-report",
+  "type": "descriptive",
+  "lint": {
+    "type": "descriptive",
+    "words": 95,
+    "sentences": 9,
+    "mean_sentence_words": 10.3,
+    "longest_sentence_words": 19,
+    "violations": {
+      "sentence_over_limit": 0,
+      "contraction": 0,
+      "banned_modal": 1,
+      "perfect_tense": 0,
+      "ing_clause": 0,
+      "semicolon": 0,
+      "latin_abbrev": 0,
+      "slop_word": 0,
+      "trailing_condition": 0,
+      "synonym_rotation": 0
+    },
+    "violations_total": 1,
+    "violations_per_100w": 1.05
+  }
+}

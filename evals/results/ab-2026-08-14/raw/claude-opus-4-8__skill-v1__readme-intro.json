@@ -1,0 +1,33 @@
+{
+  "text": "sqlpipe copies Postgres tables to Amazon S3 as Parquet files. You give it a source table and a target bucket. Then it reads the rows, writes them to Parquet, and uploads the files to S3. sqlpipe runs as a single command, so you can start a sync from a terminal or a scheduled job.\n\nsqlpipe keeps each sync incremental. It tracks the rows that it copied before and moves only the new or changed rows on the next run. As a result, a large table does not need a full copy every time. sqlpipe writes the Parquet files with a stable schema, so query engines like Athena, Trino, and Spark can read the output directly. You configure the source, the target, and the schedule in one file.",
+  "input_tokens": 2,
+  "prompt_tokens": 26326,
+  "output_tokens": 230,
+  "duration_ms": 5076,
+  "cost_usd": 0.131481,
+  "model": "claude-opus-4-8",
+  "condition": "skill-v1",
+  "scenario": "readme-intro",
+  "type": "descriptive",
+  "lint": {
+    "type": "descriptive",
+    "words": 127,
+    "sentences": 9,
+    "mean_sentence_words": 14.1,
+    "longest_sentence_words": 22,
+    "violations": {
+      "sentence_over_limit": 0,
+      "contraction": 0,
+      "banned_modal": 0,
+      "perfect_tense": 0,
+      "ing_clause": 0,
+      "semicolon": 0,
+      "latin_abbrev": 0,
+      "slop_word": 0,
+      "trailing_condition": 0,
+      "synonym_rotation": 0
+    },
+    "violations_total": 0,
+    "violations_per_100w": 0.0
+  }
+}

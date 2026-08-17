@@ -1,0 +1,33 @@
+{
+  "text": "sqlpipe moves data from Postgres to S3 with three processes.\n\nThe reader process reads rows from Postgres. It gets the rows in batches. It sends each batch to the converter process.\n\nThe converter process changes each batch into a Parquet row group. It then sends the row groups to the uploader process.\n\nThe uploader process writes the data to S3. It writes the data as multipart objects. If a write operation fails, the uploader tries the operation again.\n\nThe three processes operate at the same time. Thus, the reader can get new rows while the converter and the uploader do their tasks. This design keeps the data flow continuous. It also keeps the memory use low, because sqlpipe holds only a small number of batches in memory at one time.",
+  "input_tokens": 2,
+  "prompt_tokens": 19249,
+  "output_tokens": 227,
+  "duration_ms": 4723,
+  "cost_usd": 0.055367,
+  "model": "claude-opus-4-8",
+  "condition": "skill-v2",
+  "scenario": "architecture",
+  "type": "descriptive",
+  "lint": {
+    "type": "descriptive",
+    "words": 130,
+    "sentences": 13,
+    "mean_sentence_words": 10.0,
+    "longest_sentence_words": 21,
+    "violations": {
+      "sentence_over_limit": 0,
+      "contraction": 0,
+      "banned_modal": 0,
+      "perfect_tense": 0,
+      "ing_clause": 0,
+      "semicolon": 0,
+      "latin_abbrev": 0,
+      "slop_word": 0,
+      "trailing_condition": 0,
+      "synonym_rotation": 0
+    },
+    "violations_total": 0,
+    "violations_per_100w": 0.0
+  }
+}

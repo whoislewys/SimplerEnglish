@@ -1,0 +1,33 @@
+{
+  "text": "sqlpipe is a small command-line tool for moving data out of Postgres and into object storage without the ceremony of a full ETL platform. Point it at a database, name a table (or a query), and it streams rows straight into columnar Parquet files on S3, handling schema inference, type mapping, chunking, and compression along the way. It's designed for the common case where you just need yesterday's orders in your data lake by breakfast, not a distributed job scheduler.\n\nUnder the hood, sqlpipe uses server-side cursors to keep memory flat on tables of any size, writes atomically via multipart uploads, and supports both full snapshots and incremental syncs keyed on a watermark column. A single static binary, a YAML config, and cron are usually all you need.",
+  "input_tokens": 6,
+  "prompt_tokens": 27752,
+  "output_tokens": 244,
+  "duration_ms": 5690,
+  "cost_usd": 0.28422600000000003,
+  "model": "claude-opus-4-7",
+  "condition": "baseline",
+  "scenario": "readme-intro",
+  "type": "descriptive",
+  "lint": {
+    "type": "descriptive",
+    "words": 128,
+    "sentences": 5,
+    "mean_sentence_words": 25.6,
+    "longest_sentence_words": 34,
+    "violations": {
+      "sentence_over_limit": 2,
+      "contraction": 1,
+      "banned_modal": 0,
+      "perfect_tense": 0,
+      "ing_clause": 0,
+      "semicolon": 0,
+      "latin_abbrev": 0,
+      "slop_word": 0,
+      "trailing_condition": 0,
+      "synonym_rotation": 0
+    },
+    "violations_total": 3,
+    "violations_per_100w": 2.34
+  }
+}

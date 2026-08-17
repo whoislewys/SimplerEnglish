@@ -1,0 +1,33 @@
+{
+  "text": "**sqlpipe v2.0 Release Notes**\n\n**Breaking change: User name fields**\n\nThe `/v2/users` endpoint no longer uses the `name` field. It now uses two separate fields: `first_name` and `last_name`. Update your API calls before you upgrade. If you do not update your calls, they will fail.\n\n**New feature: Incremental mode**\n\nUse the `--incremental` flag to transfer only the rows that changed since the last run. This decreases transfer time and network load for large datasets.\n\n```\nsqlpipe transfer --incremental --source prod --target warehouse\n```\n\n**Performance: Faster Parquet writes**\n\nParquet write operations are now 40% faster. This improvement applies to all output targets that use the Parquet format. You do not need to change your configuration.",
+  "input_tokens": 3,
+  "prompt_tokens": 20768,
+  "output_tokens": 190,
+  "duration_ms": 6915,
+  "cost_usd": 0.047323000000000004,
+  "model": "claude-opus-4-6",
+  "condition": "skill-v2",
+  "scenario": "release-notes",
+  "type": "descriptive",
+  "lint": {
+    "type": "descriptive",
+    "words": 105,
+    "sentences": 12,
+    "mean_sentence_words": 8.7,
+    "longest_sentence_words": 17,
+    "violations": {
+      "sentence_over_limit": 0,
+      "contraction": 0,
+      "banned_modal": 0,
+      "perfect_tense": 0,
+      "ing_clause": 0,
+      "semicolon": 0,
+      "latin_abbrev": 0,
+      "slop_word": 0,
+      "trailing_condition": 0,
+      "synonym_rotation": 0
+    },
+    "violations_total": 0,
+    "violations_per_100w": 0.0
+  }
+}

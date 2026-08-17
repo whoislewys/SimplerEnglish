@@ -1,0 +1,33 @@
+{
+  "text": "sqlpipe is a command-line tool that syncs PostgreSQL tables to Amazon S3 as Parquet files. It connects directly to your database, reads table data in configurable batches, and writes compressed Parquet files to a specified S3 bucket \u2014 making your relational data immediately available for analytics workflows, data lakes, and query engines like Athena or DuckDB.\n\nDesigned for simplicity and reliability, sqlpipe supports incremental syncs via a configurable watermark column, so only new or updated rows are exported on each run. Whether you're building a lightweight ELT pipeline, archiving historical data, or feeding a downstream analytics stack, sqlpipe gives you a single command to move data from Postgres to S3 without the overhead of a full orchestration platform.",
+  "input_tokens": 3,
+  "prompt_tokens": 19672,
+  "output_tokens": 174,
+  "duration_ms": 5535,
+  "cost_usd": 0.009160699999999997,
+  "model": "claude-sonnet-4-6",
+  "condition": "baseline",
+  "scenario": "readme-intro",
+  "type": "descriptive",
+  "lint": {
+    "type": "descriptive",
+    "words": 118,
+    "sentences": 4,
+    "mean_sentence_words": 29.5,
+    "longest_sentence_words": 41,
+    "violations": {
+      "sentence_over_limit": 2,
+      "contraction": 1,
+      "banned_modal": 0,
+      "perfect_tense": 0,
+      "ing_clause": 0,
+      "semicolon": 0,
+      "latin_abbrev": 0,
+      "slop_word": 0,
+      "trailing_condition": 0,
+      "synonym_rotation": 0
+    },
+    "violations_total": 3,
+    "violations_per_100w": 2.54
+  }
+}

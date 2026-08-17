@@ -1,0 +1,33 @@
+{
+  "text": "sqlpipe is a command-line tool. It reads tables from a Postgres database and writes them to Amazon S3 as Parquet files. Parquet is a column-oriented format that analytics tools such as Amazon Athena, Spark, and DuckDB read natively.\n\nYou run one command to start a sync. sqlpipe connects to the database, reads the data, converts it to the Parquet format, and uploads the result to the S3 bucket. You configure sqlpipe with a YAML file. The file specifies the database connection, the tables to sync, and the destination bucket. You can sync all tables or select a subset. You can also run sqlpipe as a cron job to keep the files current.",
+  "input_tokens": 3,
+  "prompt_tokens": 25471,
+  "output_tokens": 4128,
+  "duration_ms": 57503,
+  "cost_usd": 0.0757564,
+  "model": "claude-sonnet-4-6",
+  "condition": "skill-v1",
+  "scenario": "readme-intro",
+  "type": "descriptive",
+  "lint": {
+    "type": "descriptive",
+    "words": 112,
+    "sentences": 9,
+    "mean_sentence_words": 12.4,
+    "longest_sentence_words": 22,
+    "violations": {
+      "sentence_over_limit": 0,
+      "contraction": 0,
+      "banned_modal": 0,
+      "perfect_tense": 0,
+      "ing_clause": 0,
+      "semicolon": 0,
+      "latin_abbrev": 0,
+      "slop_word": 0,
+      "trailing_condition": 0,
+      "synonym_rotation": 0
+    },
+    "violations_total": 0,
+    "violations_per_100w": 0.0
+  }
+}

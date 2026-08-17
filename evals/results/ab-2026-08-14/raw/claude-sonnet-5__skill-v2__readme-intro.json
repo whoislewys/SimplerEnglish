@@ -1,0 +1,33 @@
+{
+  "text": "sqlpipe is a command-line tool that copies tables from Postgres to Amazon S3. It reads each table, converts the rows to Parquet files, and writes the files to a bucket that you choose. Use it to build a simple, repeatable path from a live database to cheap, query-friendly storage for analytics tools such as Athena, Spark, or DuckDB.\n\nsqlpipe supports full and incremental syncs. A full sync copies an entire table on each run. An incremental sync copies only new or changed rows, based on a column that you specify, such as an updated_at timestamp or an auto-incrementing ID. You configure each sync with a small YAML file that lists the source table, the target S3 path, and the sync mode. Run sqlpipe once for a one-time export, or on a schedule for continuous replication.",
+  "input_tokens": 2,
+  "prompt_tokens": 27474,
+  "output_tokens": 262,
+  "duration_ms": 4128,
+  "cost_usd": 0.035356599999999995,
+  "model": "claude-sonnet-5",
+  "condition": "skill-v2",
+  "scenario": "readme-intro",
+  "type": "descriptive",
+  "lint": {
+    "type": "descriptive",
+    "words": 135,
+    "sentences": 8,
+    "mean_sentence_words": 16.9,
+    "longest_sentence_words": 25,
+    "violations": {
+      "sentence_over_limit": 0,
+      "contraction": 0,
+      "banned_modal": 0,
+      "perfect_tense": 0,
+      "ing_clause": 0,
+      "semicolon": 0,
+      "latin_abbrev": 0,
+      "slop_word": 0,
+      "trailing_condition": 0,
+      "synonym_rotation": 0
+    },
+    "violations_total": 0,
+    "violations_per_100w": 0.0
+  }
+}

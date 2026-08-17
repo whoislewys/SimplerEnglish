@@ -1,0 +1,33 @@
+{
+  "text": "sqlpipe is a three-stage streaming pipeline that moves Postgres tables into Parquet objects on S3 without staging the dataset on disk. The reader opens a server-side cursor against Postgres and fetches rows in fixed-size batches, pushing each batch onto a bounded channel to apply backpressure against slower downstream stages. The converter consumes batches, maps Postgres types to Arrow schemas, and encodes them into Parquet row groups sized for efficient columnar scans; completed row groups are handed off as byte buffers. The uploader initiates an S3 multipart upload per output object, streams row-group parts concurrently, and retries individual parts with exponential backoff on transient failures before completing or aborting the upload. A coordinator supervises the stages, propagates cancellation, and surfaces the first fatal error.",
+  "input_tokens": 6,
+  "prompt_tokens": 27765,
+  "output_tokens": 276,
+  "duration_ms": 5466,
+  "cost_usd": 0.061591999999999994,
+  "model": "claude-opus-4-7",
+  "condition": "baseline",
+  "scenario": "architecture",
+  "type": "descriptive",
+  "lint": {
+    "type": "descriptive",
+    "words": 123,
+    "sentences": 5,
+    "mean_sentence_words": 24.6,
+    "longest_sentence_words": 31,
+    "violations": {
+      "sentence_over_limit": 3,
+      "contraction": 0,
+      "banned_modal": 0,
+      "perfect_tense": 0,
+      "ing_clause": 0,
+      "semicolon": 1,
+      "latin_abbrev": 0,
+      "slop_word": 0,
+      "trailing_condition": 0,
+      "synonym_rotation": 0
+    },
+    "violations_total": 4,
+    "violations_per_100w": 3.25
+  }
+}

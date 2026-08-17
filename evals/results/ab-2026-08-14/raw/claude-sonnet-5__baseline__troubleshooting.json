@@ -1,0 +1,33 @@
+{
+  "text": "## Troubleshooting\n\n**Connection timeouts to Postgres**\n\nIf `sqlpipe` hangs or fails with a connection timeout when targeting Postgres, first verify network reachability with `psql` or `telnet` on the target host/port (default 5432). Common causes include restrictive security group/firewall rules, an incorrect `sslmode` setting, or `pg_hba.conf` rejecting the connecting IP. Increase the `--connect-timeout` flag if the database is under heavy load, and confirm the Postgres instance isn't at `max_connections`. For cloud-hosted instances, check that the client's IP is allow-listed.\n\n**S3 permission errors**\n\n`Access Denied` errors usually mean the IAM credentials or role used by `sqlpipe` lack `s3:GetObject`/`s3:PutObject` (and `s3:ListBucket`) permissions on the target bucket/prefix. Verify credentials via `aws sts get-caller-identity`, check the bucket policy and any SCPs, and confirm the region flag matches the bucket's actual region. KMS-encrypted buckets also require `kms:Decrypt`/`kms:GenerateDataKey` permissions on the key.",
+  "input_tokens": 2,
+  "prompt_tokens": 27090,
+  "output_tokens": 402,
+  "duration_ms": 5489,
+  "cost_usd": 0.0348486,
+  "model": "claude-sonnet-5",
+  "condition": "baseline",
+  "scenario": "troubleshooting",
+  "type": "procedural",
+  "lint": {
+    "type": "procedural",
+    "words": 137,
+    "sentences": 7,
+    "mean_sentence_words": 19.6,
+    "longest_sentence_words": 30,
+    "violations": {
+      "sentence_over_limit": 3,
+      "contraction": 1,
+      "banned_modal": 0,
+      "perfect_tense": 0,
+      "ing_clause": 0,
+      "semicolon": 0,
+      "latin_abbrev": 0,
+      "slop_word": 0,
+      "trailing_condition": 2,
+      "synonym_rotation": 2
+    },
+    "violations_total": 8,
+    "violations_per_100w": 5.84
+  }
+}

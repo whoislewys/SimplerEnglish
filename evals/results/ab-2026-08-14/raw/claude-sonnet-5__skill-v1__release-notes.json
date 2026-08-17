@@ -1,0 +1,33 @@
+{
+  "text": "## sqlpipe v2.0 Release Notes\n\n**Breaking change.** In `/v2/users`, the `name` field is now two fields: `first_name` and `last_name`. Update your client code before you upgrade. The `name` field no longer exists in responses or requests.\n\n**New flag: `--incremental`.** Use this flag to sync only new and changed rows. Full syncs are still the default when you omit the flag.\n\n**Faster Parquet writes.** sqlpipe now writes Parquet files 40% faster than in v1. This applies to all Parquet output destinations. No configuration change is necessary.\n\n**Upgrade steps:**\n\n1. Update your code to read `first_name` and `last_name` instead of `name`.\n2. Deploy your updated code.\n3. Upgrade sqlpipe to v2.0.\n4. If you want incremental syncs, add the `--incremental` flag to your sync command.",
+  "input_tokens": 2,
+  "prompt_tokens": 34910,
+  "output_tokens": 346,
+  "duration_ms": 4966,
+  "cost_usd": 0.08651960000000002,
+  "model": "claude-sonnet-5",
+  "condition": "skill-v1",
+  "scenario": "release-notes",
+  "type": "descriptive",
+  "lint": {
+    "type": "descriptive",
+    "words": 122,
+    "sentences": 14,
+    "mean_sentence_words": 8.4,
+    "longest_sentence_words": 14,
+    "violations": {
+      "sentence_over_limit": 0,
+      "contraction": 0,
+      "banned_modal": 0,
+      "perfect_tense": 0,
+      "ing_clause": 0,
+      "semicolon": 0,
+      "latin_abbrev": 0,
+      "slop_word": 0,
+      "trailing_condition": 1,
+      "synonym_rotation": 0
+    },
+    "violations_total": 1,
+    "violations_per_100w": 0.82
+  }
+}

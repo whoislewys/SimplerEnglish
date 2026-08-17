@@ -1,0 +1,33 @@
+{
+  "text": "## Getting Started\n\n### Installation\n\nInstall sqlpipe with a single command:\n\n```bash\ncurl -sSL https://get.sqlpipe.dev | sh\n```\n\n### Configuration\n\nCreate a `sqlpipe.yaml` file in your project directory. This file defines your data sources, destinations, and pipeline behavior. A minimal configuration looks like:\n\n```yaml\nsource:\n  type: postgres\n  url: postgres://user:password@localhost:5432/mydb\n\ndestination:\n  type: snowflake\n  url: snowflake://user:password@account/mydb\n```\n\nRefer to the full configuration reference for all available options, including transformations, scheduling, and error handling.\n\n### First Run\n\nOnce your configuration is ready, start your first pipeline:\n\n```bash\nsqlpipe run --config sqlpipe.yaml\n```\n\nsqlpipe will validate your configuration, connect to your source and destination, and begin transferring data. Progress and errors are logged to stdout by default.\n\nYou're now ready to explore advanced features like incremental syncs, column filtering, and scheduled runs.",
+  "input_tokens": 3,
+  "prompt_tokens": 19693,
+  "output_tokens": 245,
+  "duration_ms": 5906,
+  "cost_usd": 0.010257999999999998,
+  "model": "claude-sonnet-4-6",
+  "condition": "baseline",
+  "scenario": "getting-started",
+  "type": "procedural",
+  "lint": {
+    "type": "procedural",
+    "words": 93,
+    "sentences": 9,
+    "mean_sentence_words": 10.3,
+    "longest_sentence_words": 16,
+    "violations": {
+      "sentence_over_limit": 0,
+      "contraction": 1,
+      "banned_modal": 0,
+      "perfect_tense": 0,
+      "ing_clause": 0,
+      "semicolon": 0,
+      "latin_abbrev": 0,
+      "slop_word": 0,
+      "trailing_condition": 0,
+      "synonym_rotation": 0
+    },
+    "violations_total": 1,
+    "violations_per_100w": 1.08
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "text": "I can't do this \u2014 \"sqlpipe\" isn't a tool I have knowledge of with a defined, specific error-message format for S3 AccessDenied failures, and I don't have access to its source in this environment to check. If I invented exact wording, it would just be a fabrication presented as fact.\n\nIf you can point me to the sqlpipe source (a repo path, GitHub link, or paste the relevant error-handling code), I can find or quote the actual message. Alternatively, if you just want a *plausible* example error message for documentation/testing purposes, I can draft one \u2014 just let me know which you need.",
+  "input_tokens": 2,
+  "prompt_tokens": 27098,
+  "output_tokens": 188,
+  "duration_ms": 3887,
+  "cost_usd": 0.031714599999999996,
+  "model": "claude-sonnet-5",
+  "condition": "baseline",
+  "scenario": "error-message",
+  "type": "procedural",
+  "lint": {
+    "type": "procedural",
+    "words": 103,
+    "sentences": 4,
+    "mean_sentence_words": 25.8,
+    "longest_sentence_words": 36,
+    "violations": {
+      "sentence_over_limit": 3,
+      "contraction": 3,
+      "banned_modal": 1,
+      "perfect_tense": 0,
+      "ing_clause": 0,
+      "semicolon": 0,
+      "latin_abbrev": 0,
+      "slop_word": 0,
+      "trailing_condition": 1,
+      "synonym_rotation": 0
+    },
+    "violations_total": 8,
+    "violations_per_100w": 7.77
+  }
+}

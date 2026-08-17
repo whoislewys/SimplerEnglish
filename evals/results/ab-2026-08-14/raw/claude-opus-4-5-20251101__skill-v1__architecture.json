@@ -1,0 +1,33 @@
+{
+  "text": "sqlpipe moves data from Postgres to S3 in three stages: read, convert, and upload.\n\nThe reader connects to Postgres and streams rows in batches. It uses a server-side cursor to keep memory use constant. Each batch contains a fixed number of rows (default 10,000).\n\nThe converter receives each batch and builds a Parquet row group. It maps Postgres types to Parquet types and compresses the data. One batch becomes one row group.\n\nThe uploader writes the Parquet file to S3 as a multipart object. It starts the upload before the file is complete. If a part fails, the uploader retries it three times before it stops. When all parts succeed, the uploader completes the multipart upload.\n\nThe three stages run in parallel. The reader fills a buffer while the converter and uploader process earlier batches.",
+  "input_tokens": 10,
+  "prompt_tokens": 26308,
+  "output_tokens": 1080,
+  "duration_ms": 16763,
+  "cost_usd": 0.129178,
+  "model": "claude-opus-4-5-20251101",
+  "condition": "skill-v1",
+  "scenario": "architecture",
+  "type": "descriptive",
+  "lint": {
+    "type": "descriptive",
+    "words": 135,
+    "sentences": 14,
+    "mean_sentence_words": 9.6,
+    "longest_sentence_words": 13,
+    "violations": {
+      "sentence_over_limit": 0,
+      "contraction": 0,
+      "banned_modal": 0,
+      "perfect_tense": 0,
+      "ing_clause": 0,
+      "semicolon": 0,
+      "latin_abbrev": 0,
+      "slop_word": 0,
+      "trailing_condition": 0,
+      "synonym_rotation": 0
+    },
+    "violations_total": 0,
+    "violations_per_100w": 0.0
+  }
+}

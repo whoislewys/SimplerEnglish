@@ -1,0 +1,33 @@
+{
+  "text": "## Troubleshooting\n\n**Connection timeouts to Postgres.** sqlpipe stops with `dial tcp: i/o timeout` when it cannot reach the Postgres port (5432 by default).\n\n1. Make sure that the host that runs sqlpipe can reach the Postgres port. A firewall or security group usually blocks it.\n2. If the database is managed (RDS, Cloud SQL), make sure that the instance accepts connections from the IP of sqlpipe.\n3. If the network is slow, increase `source.connect_timeout_seconds` in the configuration.\n\n**S3 permission errors.** sqlpipe stops with `AccessDenied` when the IAM identity does not have the correct permissions on the bucket.\n\n1. Make sure that the IAM role or user has `s3:GetObject` and `s3:PutObject` on the target bucket.\n2. If the bucket has a bucket policy, make sure that the policy does not deny the IAM identity.\n3. If the bucket uses KMS encryption, make sure that the IAM identity has `kms:Decrypt` and `kms:GenerateDataKey` on the key.",
+  "input_tokens": 6,
+  "prompt_tokens": 35206,
+  "output_tokens": 415,
+  "duration_ms": 5273,
+  "cost_usd": 0.14503799999999997,
+  "model": "claude-opus-4-7",
+  "condition": "skill-v1",
+  "scenario": "troubleshooting",
+  "type": "procedural",
+  "lint": {
+    "type": "procedural",
+    "words": 148,
+    "sentences": 9,
+    "mean_sentence_words": 15.8,
+    "longest_sentence_words": 20,
+    "violations": {
+      "sentence_over_limit": 0,
+      "contraction": 0,
+      "banned_modal": 0,
+      "perfect_tense": 0,
+      "ing_clause": 0,
+      "semicolon": 0,
+      "latin_abbrev": 0,
+      "slop_word": 0,
+      "trailing_condition": 2,
+      "synonym_rotation": 0
+    },
+    "violations_total": 2,
+    "violations_per_100w": 1.35
+  }
+}

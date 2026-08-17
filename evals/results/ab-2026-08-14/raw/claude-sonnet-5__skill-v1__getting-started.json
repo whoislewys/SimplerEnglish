@@ -1,0 +1,33 @@
+{
+  "text": "Connection timeouts. sqlpipe stops with `dial tcp: i/o timeout` when it cannot reach the Postgres port (5432 by default).\n\n1. Make sure that the host that runs sqlpipe can reach the Postgres port. A firewall or security group usually blocks it.\n2. If the database is managed (RDS, Cloud SQL), make sure that the instance accepts connections from the IP of sqlpipe.\n3. If the network is slow, increase `source.connect_timeout_seconds` in the configuration.",
+  "input_tokens": 2,
+  "prompt_tokens": 34933,
+  "output_tokens": 174,
+  "duration_ms": 2941,
+  "cost_usd": 0.0840596,
+  "model": "claude-sonnet-5",
+  "condition": "skill-v1",
+  "scenario": "getting-started",
+  "type": "procedural",
+  "lint": {
+    "type": "procedural",
+    "words": 70,
+    "sentences": 6,
+    "mean_sentence_words": 11.2,
+    "longest_sentence_words": 20,
+    "violations": {
+      "sentence_over_limit": 0,
+      "contraction": 0,
+      "banned_modal": 0,
+      "perfect_tense": 0,
+      "ing_clause": 0,
+      "semicolon": 0,
+      "latin_abbrev": 0,
+      "slop_word": 0,
+      "trailing_condition": 1,
+      "synonym_rotation": 0
+    },
+    "violations_total": 1,
+    "violations_per_100w": 1.43
+  }
+}

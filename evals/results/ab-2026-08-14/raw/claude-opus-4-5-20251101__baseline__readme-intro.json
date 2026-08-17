@@ -1,0 +1,33 @@
+{
+  "text": "# sqlpipe\n\nsqlpipe is a command-line tool that exports PostgreSQL tables to Amazon S3 as Parquet files. It handles the full pipeline\u2014connecting to your database, reading table data in efficient batches, converting rows to columnar Parquet format, and uploading the results to S3.\n\nParquet's columnar storage pairs naturally with analytical query engines like Athena, Spark, and DuckDB, making sqlpipe useful for offloading historical data, feeding data lakes, or creating queryable backups. The tool supports incremental syncs based on timestamp columns, parallel uploads for large tables, and configurable compression. Configuration is minimal: point it at a Postgres connection string and an S3 bucket, and it handles the rest.",
+  "input_tokens": 10,
+  "prompt_tokens": 20743,
+  "output_tokens": 242,
+  "duration_ms": 5611,
+  "cost_usd": 0.214071,
+  "model": "claude-opus-4-5-20251101",
+  "condition": "baseline",
+  "scenario": "readme-intro",
+  "type": "descriptive",
+  "lint": {
+    "type": "descriptive",
+    "words": 105,
+    "sentences": 6,
+    "mean_sentence_words": 17.5,
+    "longest_sentence_words": 28,
+    "violations": {
+      "sentence_over_limit": 2,
+      "contraction": 0,
+      "banned_modal": 0,
+      "perfect_tense": 0,
+      "ing_clause": 1,
+      "semicolon": 0,
+      "latin_abbrev": 0,
+      "slop_word": 0,
+      "trailing_condition": 0,
+      "synonym_rotation": 0
+    },
+    "violations_total": 3,
+    "violations_per_100w": 2.86
+  }
+}

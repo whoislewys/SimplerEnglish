@@ -1,0 +1,33 @@
+{
+  "text": "Troubleshooting\n\nConnection timeout to Postgres\n\nThe tool tries to connect for 30 seconds. If the connection fails, sqlpipe shows this error: \"connect timeout: postgres.\" Do these checks:\n\n1. Confirm the Postgres host and port. Use the command \"psql -h <host> -p <port>\" to test the connection.\n2. Confirm the database allows remote connections. Check the \"pg_hba.conf\" file.\n3. Confirm no firewall blocks the port. Ask your network administrator if you are not sure.\n\nPermission error for S3\n\nIf sqlpipe shows this error: \"S3 access denied,\" the tool cannot write to the bucket. Do these checks:\n\n1. Confirm the IAM role has \"s3:PutObject\" permission for the target bucket.\n2. Confirm the bucket policy allows access from your account.\n3. Confirm the correct AWS region in your sqlpipe config file.\n\nIf the errors continue after these checks, contact your database administrator or your AWS administrator.",
+  "input_tokens": 2,
+  "prompt_tokens": 27795,
+  "output_tokens": 328,
+  "duration_ms": 5151,
+  "cost_usd": 0.0382516,
+  "model": "claude-sonnet-5",
+  "condition": "skill-v2",
+  "scenario": "troubleshooting",
+  "type": "procedural",
+  "lint": {
+    "type": "procedural",
+    "words": 143,
+    "sentences": 17,
+    "mean_sentence_words": 8.1,
+    "longest_sentence_words": 15,
+    "violations": {
+      "sentence_over_limit": 0,
+      "contraction": 0,
+      "banned_modal": 0,
+      "perfect_tense": 0,
+      "ing_clause": 0,
+      "semicolon": 0,
+      "latin_abbrev": 0,
+      "slop_word": 0,
+      "trailing_condition": 1,
+      "synonym_rotation": 1
+    },
+    "violations_total": 2,
+    "violations_per_100w": 1.4
+  }
+}

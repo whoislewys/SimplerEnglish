@@ -1,0 +1,33 @@
+{
+  "text": "SQLpipe has three processes that run at the same time.\n\nThe reader connects to Postgres. It streams rows in batches. Each batch has a fixed row count. The reader sends batches to a channel.\n\nThe converter reads from the channel. It changes each batch into a Parquet row group. It writes the row group to a buffer. When the buffer is full, the converter sends the buffer to the uploader.\n\nThe uploader writes each buffer to S3 as one part of a multipart object. If a part fails, the uploader tries again. It uses exponential backoff. After three tries, the uploader stops and returns an error.\n\nThe three processes run in a pipeline. Back pressure from a slow stage stops the faster stages. This keeps memory use low.",
+  "input_tokens": 6,
+  "prompt_tokens": 28139,
+  "output_tokens": 234,
+  "duration_ms": 4966,
+  "cost_usd": 0.064585,
+  "model": "claude-opus-4-7",
+  "condition": "skill-v2",
+  "scenario": "architecture",
+  "type": "descriptive",
+  "lint": {
+    "type": "descriptive",
+    "words": 128,
+    "sentences": 16,
+    "mean_sentence_words": 8.0,
+    "longest_sentence_words": 14,
+    "violations": {
+      "sentence_over_limit": 0,
+      "contraction": 0,
+      "banned_modal": 0,
+      "perfect_tense": 0,
+      "ing_clause": 0,
+      "semicolon": 0,
+      "latin_abbrev": 0,
+      "slop_word": 0,
+      "trailing_condition": 0,
+      "synonym_rotation": 0
+    },
+    "violations_total": 0,
+    "violations_per_100w": 0.0
+  }
+}

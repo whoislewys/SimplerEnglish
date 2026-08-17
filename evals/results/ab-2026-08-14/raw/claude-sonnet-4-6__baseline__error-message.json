@@ -1,0 +1,33 @@
+{
+  "text": "I don't have access to the sqlpipe source code or network access to retrieve it, so I can't give you the exact message text without risking fabricating it \u2014 which would be worse than not answering.\n\nTo find it yourself:\n\n```bash\ngit clone https://github.com/sqlpipe/sqlpipe\ngrep -r \"AccessDenied\\|PutObject\\|s3.*error\\|upload.*fail\" sqlpipe/ --include=\"*.go\" -n\n```\n\nOr reproduce it directly by running sqlpipe against an S3 bucket with a restricted IAM policy and capturing stderr.",
+  "input_tokens": 6,
+  "prompt_tokens": 40624,
+  "output_tokens": 614,
+  "duration_ms": 69012,
+  "cost_usd": 0.18390085,
+  "model": "claude-sonnet-4-6",
+  "condition": "baseline",
+  "scenario": "error-message",
+  "type": "procedural",
+  "lint": {
+    "type": "procedural",
+    "words": 59,
+    "sentences": 3,
+    "mean_sentence_words": 19.7,
+    "longest_sentence_words": 36,
+    "violations": {
+      "sentence_over_limit": 1,
+      "contraction": 2,
+      "banned_modal": 1,
+      "perfect_tense": 0,
+      "ing_clause": 0,
+      "semicolon": 0,
+      "latin_abbrev": 0,
+      "slop_word": 0,
+      "trailing_condition": 0,
+      "synonym_rotation": 0
+    },
+    "violations_total": 4,
+    "violations_per_100w": 6.78
+  }
+}

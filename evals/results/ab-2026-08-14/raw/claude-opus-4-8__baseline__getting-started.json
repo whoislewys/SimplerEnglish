@@ -1,0 +1,33 @@
+{
+  "text": "## Getting Started\n\nGet up and running with sqlpipe in three steps.\n\n**1. Install**\n\nDownload and install the CLI with a single command:\n\n```sh\ncurl -sSL https://get.sqlpipe.dev | sh\n```\n\nThis installs the `sqlpipe` binary to your path. Verify the installation with `sqlpipe --version`.\n\n**2. Configure**\n\nsqlpipe is driven by a `sqlpipe.yaml` file that defines your source, destination, and the data you want to move. Create one in your project directory:\n\n```yaml\nsource:\n  driver: postgres\n  url: postgres://user:pass@localhost:5432/mydb\n\ndestination:\n  driver: snowflake\n  url: snowflake://user:pass@account/warehouse\n\npipelines:\n  - name: users\n    query: SELECT * FROM users\n```\n\n**3. Run**\n\nExecute your first pipeline by pointing sqlpipe at the config:\n\n```sh\nsqlpipe run --config sqlpipe.yaml\n```\n\nsqlpipe connects to both databases, runs each pipeline, and reports progress as rows are transferred. That's it \u2014 your data is now flowing.",
+  "input_tokens": 2,
+  "prompt_tokens": 18900,
+  "output_tokens": 375,
+  "duration_ms": 6461,
+  "cost_usd": 0.055320999999999995,
+  "model": "claude-opus-4-8",
+  "condition": "baseline",
+  "scenario": "getting-started",
+  "type": "procedural",
+  "lint": {
+    "type": "procedural",
+    "words": 96,
+    "sentences": 9,
+    "mean_sentence_words": 10.3,
+    "longest_sentence_words": 20,
+    "violations": {
+      "sentence_over_limit": 0,
+      "contraction": 0,
+      "banned_modal": 0,
+      "perfect_tense": 0,
+      "ing_clause": 0,
+      "semicolon": 0,
+      "latin_abbrev": 0,
+      "slop_word": 0,
+      "trailing_condition": 0,
+      "synonym_rotation": 0
+    },
+    "violations_total": 0,
+    "violations_per_100w": 0.0
+  }
+}

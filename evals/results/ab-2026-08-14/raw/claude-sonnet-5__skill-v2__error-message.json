@@ -1,0 +1,33 @@
+{
+  "text": "Error: Could not upload to S3.\nAccess denied. Check the IAM credentials for the s3:PutObject permission.\nContact your system administrator if the problem stays.",
+  "input_tokens": 2,
+  "prompt_tokens": 27803,
+  "output_tokens": 57,
+  "duration_ms": 2182,
+  "cost_usd": 0.0342526,
+  "model": "claude-sonnet-5",
+  "condition": "skill-v2",
+  "scenario": "error-message",
+  "type": "procedural",
+  "lint": {
+    "type": "procedural",
+    "words": 24,
+    "sentences": 4,
+    "mean_sentence_words": 5.8,
+    "longest_sentence_words": 8,
+    "violations": {
+      "sentence_over_limit": 0,
+      "contraction": 0,
+      "banned_modal": 1,
+      "perfect_tense": 0,
+      "ing_clause": 0,
+      "semicolon": 0,
+      "latin_abbrev": 0,
+      "slop_word": 0,
+      "trailing_condition": 1,
+      "synonym_rotation": 0
+    },
+    "violations_total": 2,
+    "violations_per_100w": 8.33
+  }
+}

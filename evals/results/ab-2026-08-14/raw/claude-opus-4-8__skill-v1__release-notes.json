@@ -1,0 +1,33 @@
+{
+  "text": "sqlpipe v2.0\n\n**Breaking change: the `name` field of `/v2/users`**\n\nThe `/v2/users` endpoint no longer returns the `name` field. It now returns `first_name` and `last_name`. Update your integration before you upgrade to v2.0.\n\nCAUTION: A request that reads `name` from the response fails after the upgrade. Change the code to read `first_name` and `last_name`.\n\n**New features**\n\n- A new `--incremental` flag copies only the rows that changed since the last run. This flag makes each run faster.\n- Parquet writes are 40% faster than in v1.\n\n**How to upgrade**\n\n1. Update the client to read `first_name` and `last_name`.\n2. Install sqlpipe v2.0.\n3. If you want incremental copies, add the `--incremental` flag.",
+  "input_tokens": 2,
+  "prompt_tokens": 26341,
+  "output_tokens": 265,
+  "duration_ms": 5396,
+  "cost_usd": 0.132545,
+  "model": "claude-opus-4-8",
+  "condition": "skill-v1",
+  "scenario": "release-notes",
+  "type": "descriptive",
+  "lint": {
+    "type": "descriptive",
+    "words": 115,
+    "sentences": 12,
+    "mean_sentence_words": 9.1,
+    "longest_sentence_words": 16,
+    "violations": {
+      "sentence_over_limit": 0,
+      "contraction": 0,
+      "banned_modal": 0,
+      "perfect_tense": 0,
+      "ing_clause": 0,
+      "semicolon": 0,
+      "latin_abbrev": 0,
+      "slop_word": 0,
+      "trailing_condition": 0,
+      "synonym_rotation": 0
+    },
+    "violations_total": 0,
+    "violations_per_100w": 0.0
+  }
+}

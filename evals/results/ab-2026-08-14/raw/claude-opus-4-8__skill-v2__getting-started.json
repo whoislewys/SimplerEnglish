@@ -1,0 +1,33 @@
+{
+  "text": "# Getting started\n\n## Install\n\nTo install sqlpipe, run this command:\n\n```\ncurl -sSL https://get.sqlpipe.dev | sh\n```\n\nThe installer puts the sqlpipe binary on your system.\n\n## Configure\n\nsqlpipe reads its settings from a file named `sqlpipe.yaml`. Make this file in your project directory. In the file, set your source database, your target database, and the tables that you want to move.\n\n## First run\n\nWhen the configuration file is ready, run this command:\n\n```\nsqlpipe run --config sqlpipe.yaml\n```\n\nsqlpipe reads the file and starts the data transfer. The tool shows the progress of each step on the screen. When the transfer is complete, sqlpipe shows a summary of the rows that it moved.\n\nIf an error occurs, sqlpipe stops and shows a message. Read the message, correct the configuration file, and run the command again.",
+  "input_tokens": 2,
+  "prompt_tokens": 17982,
+  "output_tokens": 287,
+  "duration_ms": 5448,
+  "cost_usd": 0.044214,
+  "model": "claude-opus-4-8",
+  "condition": "skill-v2",
+  "scenario": "getting-started",
+  "type": "procedural",
+  "lint": {
+    "type": "procedural",
+    "words": 116,
+    "sentences": 11,
+    "mean_sentence_words": 10.5,
+    "longest_sentence_words": 18,
+    "violations": {
+      "sentence_over_limit": 0,
+      "contraction": 0,
+      "banned_modal": 0,
+      "perfect_tense": 0,
+      "ing_clause": 0,
+      "semicolon": 0,
+      "latin_abbrev": 0,
+      "slop_word": 0,
+      "trailing_condition": 0,
+      "synonym_rotation": 1
+    },
+    "violations_total": 1,
+    "violations_per_100w": 0.86
+  }
+}

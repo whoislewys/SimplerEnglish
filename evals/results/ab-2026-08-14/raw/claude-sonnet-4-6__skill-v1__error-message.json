@@ -1,0 +1,33 @@
+{
+  "text": "```\nError: S3 upload failed. AccessDenied.\nThe IAM credentials do not have the s3:PutObject permission on the target bucket.\nAdd s3:PutObject to the IAM policy for the credentials that sqlpipe uses.\n```",
+  "input_tokens": 3,
+  "prompt_tokens": 25468,
+  "output_tokens": 561,
+  "duration_ms": 9182,
+  "cost_usd": 0.0709092,
+  "model": "claude-sonnet-4-6",
+  "condition": "skill-v1",
+  "scenario": "error-message",
+  "type": "procedural",
+  "lint": {
+    "type": "procedural",
+    "words": 1,
+    "sentences": 0,
+    "mean_sentence_words": 0.0,
+    "longest_sentence_words": 0,
+    "violations": {
+      "sentence_over_limit": 0,
+      "contraction": 0,
+      "banned_modal": 0,
+      "perfect_tense": 0,
+      "ing_clause": 0,
+      "semicolon": 0,
+      "latin_abbrev": 0,
+      "slop_word": 0,
+      "trailing_condition": 0,
+      "synonym_rotation": 0
+    },
+    "violations_total": 0,
+    "violations_per_100w": 0.0
+  }
+}

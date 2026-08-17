@@ -1,0 +1,33 @@
+{
+  "text": "**Incident Report: API Errors on 2026-08-14**\n\n**Duration:** 14:02\u201314:31 UTC (29 minutes)\n\n**Impact:** 12% of API requests returned HTTP 502 errors.\n\n**Root Cause:** A deployment removed the cache warmup step. When the new version started, the cache was empty. Requests to cold cache nodes failed.\n\n**Timeline:**\n- 14:02 \u2013 Monitoring detected the increase in 502 errors.\n- 14:08 \u2013 Engineers identified the faulty deployment.\n- 14:27 \u2013 The team reverted the deployment.\n- 14:31 \u2013 Error rates returned to normal.\n\n**Resolution:** We restored the previous version. All services now operate correctly.\n\n**Next Steps:** We will add a pre-deployment check that blocks releases if the cache warmup step is missing.",
+  "input_tokens": 10,
+  "prompt_tokens": 21048,
+  "output_tokens": 359,
+  "duration_ms": 7183,
+  "cost_usd": 0.053308,
+  "model": "claude-opus-4-5-20251101",
+  "condition": "skill-v2",
+  "scenario": "incident-report",
+  "type": "descriptive",
+  "lint": {
+    "type": "descriptive",
+    "words": 108,
+    "sentences": 12,
+    "mean_sentence_words": 8.7,
+    "longest_sentence_words": 18,
+    "violations": {
+      "sentence_over_limit": 0,
+      "contraction": 0,
+      "banned_modal": 0,
+      "perfect_tense": 0,
+      "ing_clause": 0,
+      "semicolon": 0,
+      "latin_abbrev": 0,
+      "slop_word": 0,
+      "trailing_condition": 1,
+      "synonym_rotation": 0
+    },
+    "violations_total": 1,
+    "violations_per_100w": 0.93
+  }
+}

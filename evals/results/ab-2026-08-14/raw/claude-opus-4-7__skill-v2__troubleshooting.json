@@ -1,0 +1,33 @@
+{
+  "text": "# Troubleshooting\n\n## Postgres connection timeouts\n\nIf the CLI cannot connect to Postgres, do the steps that follow.\n\n1. Make sure that the database host and port are correct.\n2. Make sure that the network permits traffic on the database port.\n3. Increase the timeout value with the flag `--pg-timeout=60s`.\n4. Do the command again.\n\nIf the problem continues, examine the Postgres server logs for refused connections.\n\n## S3 permission errors\n\nIf sqlpipe shows an S3 permission error, the IAM role does not have the correct rights.\n\n1. Make sure that the IAM role has the permissions `s3:GetObject`, `s3:PutObject`, and `s3:ListBucket`.\n2. Make sure that the bucket policy permits the role.\n3. Make sure that the AWS credentials are current.\n4. Do the command again with the flag `--verbose` to see the full error.\n\nIf the problem continues, send the log to the support team.",
+  "input_tokens": 6,
+  "prompt_tokens": 28116,
+  "output_tokens": 315,
+  "duration_ms": 5817,
+  "cost_usd": 0.06636,
+  "model": "claude-opus-4-7",
+  "condition": "skill-v2",
+  "scenario": "troubleshooting",
+  "type": "procedural",
+  "lint": {
+    "type": "procedural",
+    "words": 139,
+    "sentences": 12,
+    "mean_sentence_words": 10.9,
+    "longest_sentence_words": 16,
+    "violations": {
+      "sentence_over_limit": 0,
+      "contraction": 0,
+      "banned_modal": 0,
+      "perfect_tense": 0,
+      "ing_clause": 0,
+      "semicolon": 0,
+      "latin_abbrev": 0,
+      "slop_word": 0,
+      "trailing_condition": 0,
+      "synonym_rotation": 0
+    },
+    "violations_total": 0,
+    "violations_per_100w": 0.0
+  }
+}

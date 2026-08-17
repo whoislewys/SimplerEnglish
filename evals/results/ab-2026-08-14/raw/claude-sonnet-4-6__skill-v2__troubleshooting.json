@@ -1,0 +1,33 @@
+{
+  "text": "## Troubleshooting\n\n### Connection Timeouts to PostgreSQL\n\n**Symptom:** sqlpipe stops and shows a connection timeout error.\n\n**Causes and fixes:**\n\n- Make sure the PostgreSQL host is reachable from the machine that runs sqlpipe. Use `ping` or `telnet` to test the connection.\n- Check that the port in your connection string is correct. The default port is 5432.\n- If a firewall is between sqlpipe and the database, open the correct port.\n- Increase the timeout value with the `--timeout` flag if the database is slow to respond.\n\n---\n\n### S3 Permission Errors\n\n**Symptom:** sqlpipe shows an access denied or forbidden error when it reads from or writes to S3.\n\n**Causes and fixes:**\n\n- Check that the AWS credentials are set correctly. Use `aws sts get-caller-identity` to confirm the active identity.\n- Make sure the IAM role or user has `s3:GetObject` and `s3:PutObject` permissions on the target bucket.\n- If the bucket uses a resource policy, confirm the policy allows access from the current account.",
+  "input_tokens": 3,
+  "prompt_tokens": 20192,
+  "output_tokens": 411,
+  "duration_ms": 8062,
+  "cost_usd": 0.0317272,
+  "model": "claude-sonnet-4-6",
+  "condition": "skill-v2",
+  "scenario": "troubleshooting",
+  "type": "procedural",
+  "lint": {
+    "type": "procedural",
+    "words": 151,
+    "sentences": 12,
+    "mean_sentence_words": 12.0,
+    "longest_sentence_words": 18,
+    "violations": {
+      "sentence_over_limit": 0,
+      "contraction": 0,
+      "banned_modal": 0,
+      "perfect_tense": 0,
+      "ing_clause": 0,
+      "semicolon": 0,
+      "latin_abbrev": 0,
+      "slop_word": 0,
+      "trailing_condition": 2,
+      "synonym_rotation": 1
+    },
+    "violations_total": 3,
+    "violations_per_100w": 1.99
+  }
+}

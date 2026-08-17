@@ -1,0 +1,33 @@
+{
+  "text": "sqlpipe moves data from Postgres to S3 in a streaming, three-stage pipeline designed to keep memory bounded regardless of table size.\n\nA reader process connects to Postgres and pulls rows in fixed-size batches via cursor-based pagination, avoiding full result-set materialization. Each batch is handed off to a converter, which transforms rows into typed Arrow/Parquet row groups, applying schema mapping and encoding before flushing them into a growing Parquet file structure. Completed row groups (or file segments) are passed to an uploader, which streams them to S3 using multipart upload, chunking large outputs into parts, retrying transient failures with backoff, and finalizing the object once all parts succeed. Stages run concurrently and are connected by bounded channels, so reading, conversion, and upload overlap rather than execute sequentially, trading a small memory footprint for steady throughput on large exports.",
+  "input_tokens": 2,
+  "prompt_tokens": 27444,
+  "output_tokens": 299,
+  "duration_ms": 5087,
+  "cost_usd": 0.0354276,
+  "model": "claude-sonnet-5",
+  "condition": "baseline",
+  "scenario": "architecture",
+  "type": "descriptive",
+  "lint": {
+    "type": "descriptive",
+    "words": 137,
+    "sentences": 5,
+    "mean_sentence_words": 27.4,
+    "longest_sentence_words": 37,
+    "violations": {
+      "sentence_over_limit": 3,
+      "contraction": 0,
+      "banned_modal": 0,
+      "perfect_tense": 0,
+      "ing_clause": 0,
+      "semicolon": 0,
+      "latin_abbrev": 0,
+      "slop_word": 0,
+      "trailing_condition": 0,
+      "synonym_rotation": 0
+    },
+    "violations_total": 3,
+    "violations_per_100w": 2.19
+  }
+}

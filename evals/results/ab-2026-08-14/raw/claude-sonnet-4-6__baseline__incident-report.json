@@ -1,0 +1,33 @@
+{
+  "text": "**Incident Report \u2014 August 14, 2026**\n\n**14:02\u201314:31 UTC | Partial API Outage**\n\nStarting at 14:02 UTC, approximately 12% of API requests began returning HTTP 502 errors. The issue was traced to a deployment that inadvertently removed the cache warmup step, causing elevated error rates as requests hit cold cache paths unable to serve responses correctly.\n\nOur team identified the root cause and initiated a rollback at 14:27 UTC. The deployment was fully reverted by 14:31 UTC, restoring normal service. No data was lost or corrupted during this window.\n\nWe are reviewing our deployment checklist to ensure the cache warmup step is validated before future releases go live.",
+  "input_tokens": 3,
+  "prompt_tokens": 19689,
+  "output_tokens": 167,
+  "duration_ms": 4793,
+  "cost_usd": 0.0247592,
+  "model": "claude-sonnet-4-6",
+  "condition": "baseline",
+  "scenario": "incident-report",
+  "type": "descriptive",
+  "lint": {
+    "type": "descriptive",
+    "words": 107,
+    "sentences": 6,
+    "mean_sentence_words": 17.8,
+    "longest_sentence_words": 29,
+    "violations": {
+      "sentence_over_limit": 2,
+      "contraction": 0,
+      "banned_modal": 0,
+      "perfect_tense": 0,
+      "ing_clause": 1,
+      "semicolon": 0,
+      "latin_abbrev": 0,
+      "slop_word": 0,
+      "trailing_condition": 0,
+      "synonym_rotation": 2
+    },
+    "violations_total": 5,
+    "violations_per_100w": 4.67
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "text": "## sqlpipe Architecture\n\nsqlpipe moves data from Postgres to S3 in three stages. Each stage runs as an independent process in a pipeline.\n\n**Reader.** The reader connects to Postgres and runs the source query. It gets rows in batches of a set size. Each batch goes into a shared buffer. The reader stops when it gets the last row or when it gets a cancel signal.\n\n**Converter.** The converter takes each batch from the buffer. It changes the rows into a Parquet row group. It writes each row group to a local temporary file. Column types map directly from Postgres types to Parquet types.\n\n**Uploader.** The uploader sends the Parquet file to S3 with the multipart upload API. It splits the file into parts and sends each part separately. If a part fails, the uploader tries again up to three times. After all parts are complete, the uploader tells S3 to assemble the object.",
+  "input_tokens": 3,
+  "prompt_tokens": 20758,
+  "output_tokens": 283,
+  "duration_ms": 7978,
+  "cost_usd": 0.049513,
+  "model": "claude-opus-4-6",
+  "condition": "skill-v2",
+  "scenario": "architecture",
+  "type": "descriptive",
+  "lint": {
+    "type": "descriptive",
+    "words": 151,
+    "sentences": 14,
+    "mean_sentence_words": 10.8,
+    "longest_sentence_words": 16,
+    "violations": {
+      "sentence_over_limit": 0,
+      "contraction": 0,
+      "banned_modal": 0,
+      "perfect_tense": 0,
+      "ing_clause": 0,
+      "semicolon": 0,
+      "latin_abbrev": 0,
+      "slop_word": 0,
+      "trailing_condition": 1,
+      "synonym_rotation": 0
+    },
+    "violations_total": 1,
+    "violations_per_100w": 0.66
+  }
+}

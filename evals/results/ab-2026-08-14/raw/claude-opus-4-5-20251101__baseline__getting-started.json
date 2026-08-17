@@ -1,0 +1,33 @@
+{
+  "text": "## Getting Started\n\n### Installation\n\nInstall sqlpipe using the install script:\n\n```bash\ncurl -sSL https://get.sqlpipe.dev | sh\n```\n\nThis downloads the latest binary for your platform and adds it to your PATH.\n\n### Configuration\n\nCreate a `sqlpipe.yaml` file in your project directory:\n\n```yaml\nsource:\n  type: postgres\n  connection: postgresql://user:pass@localhost:5432/mydb\n\ndestination:\n  type: snowflake\n  connection: account.snowflakecomputing.com\n\ntables:\n  - users\n  - orders\n```\n\nAdjust the source and destination settings to match your database connections. The `tables` list specifies which tables to sync.\n\n### Running Your First Sync\n\nExecute the pipeline with:\n\n```bash\nsqlpipe run --config sqlpipe.yaml\n```\n\nsqlpipe will connect to your source database, extract the specified tables, and load them into your destination. Progress and any errors display in real-time.\n\nFor additional options, run `sqlpipe --help` or visit the documentation.",
+  "input_tokens": 10,
+  "prompt_tokens": 20764,
+  "output_tokens": 373,
+  "duration_ms": 7110,
+  "cost_usd": 0.050538999999999994,
+  "model": "claude-opus-4-5-20251101",
+  "condition": "baseline",
+  "scenario": "getting-started",
+  "type": "procedural",
+  "lint": {
+    "type": "procedural",
+    "words": 84,
+    "sentences": 9,
+    "mean_sentence_words": 9.3,
+    "longest_sentence_words": 17,
+    "violations": {
+      "sentence_over_limit": 0,
+      "contraction": 0,
+      "banned_modal": 0,
+      "perfect_tense": 0,
+      "ing_clause": 0,
+      "semicolon": 0,
+      "latin_abbrev": 0,
+      "slop_word": 0,
+      "trailing_condition": 0,
+      "synonym_rotation": 0
+    },
+    "violations_total": 0,
+    "violations_per_100w": 0.0
+  }
+}

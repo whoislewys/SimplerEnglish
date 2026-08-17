@@ -1,0 +1,33 @@
+{
+  "text": "**Incident Report \u2014 API 502 Errors**\n**Date:** 2026-08-14\n**Duration:** 14:02\u201314:31 UTC\n**Status:** Resolved\n\n**What happened**\nAt 14:02 UTC, 12% of API requests started to fail with HTTP 502 errors. The failures continued for 29 minutes.\n\n**Cause**\nA deployment removed the cache warmup step. Without this step, backend services received requests before the cache was ready. The services could not process the requests and returned 502 errors.\n\n**Resolution**\nOur team identified the faulty deployment and reverted it at 14:27 UTC. The cache warmup step ran again. All API responses returned to normal at 14:31 UTC.\n\n**Next steps**\nWe will add a check to the deployment pipeline. This check will prevent a deployment if it does not include the cache warmup step.",
+  "input_tokens": 3,
+  "prompt_tokens": 20523,
+  "output_tokens": 336,
+  "duration_ms": 8446,
+  "cost_usd": 0.048506,
+  "model": "claude-opus-4-6",
+  "condition": "skill-v2",
+  "scenario": "incident-report",
+  "type": "descriptive",
+  "lint": {
+    "type": "descriptive",
+    "words": 120,
+    "sentences": 10,
+    "mean_sentence_words": 12.0,
+    "longest_sentence_words": 29,
+    "violations": {
+      "sentence_over_limit": 1,
+      "contraction": 0,
+      "banned_modal": 1,
+      "perfect_tense": 0,
+      "ing_clause": 0,
+      "semicolon": 0,
+      "latin_abbrev": 0,
+      "slop_word": 0,
+      "trailing_condition": 1,
+      "synonym_rotation": 0
+    },
+    "violations_total": 3,
+    "violations_per_100w": 2.5
+  }
+}

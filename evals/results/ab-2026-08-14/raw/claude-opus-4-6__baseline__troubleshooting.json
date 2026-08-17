@@ -1,0 +1,33 @@
+{
+  "text": "## Troubleshooting\n\n### Postgres Connection Timeouts\n\nIf `sqlpipe` hangs or returns a connection timeout when reaching your Postgres instance:\n\n- Verify the host, port, and credentials in your connection string or config file.\n- Ensure the Postgres server accepts remote connections (`listen_addresses` in `postgresql.conf` and client entry in `pg_hba.conf`).\n- Check that firewalls and security groups allow inbound traffic on the Postgres port (default 5432).\n- Increase the connection timeout with `--timeout` if the server is under heavy load.\n- Test connectivity independently with `psql` or `pg_isready` to isolate whether the issue is network-level.\n\n### S3 Permission Errors\n\nIf you receive `AccessDenied` or `403 Forbidden` when reading from or writing to S3:\n\n- Confirm your AWS credentials are configured (`AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY`, or an IAM instance profile).\n- Verify the IAM policy grants `s3:GetObject`, `s3:PutObject`, and `s3:ListBucket` on the target bucket and prefix.\n- Check that the bucket policy does not explicitly deny your principal.\n- Ensure the correct `--region` flag matches the bucket's region.",
+  "input_tokens": 3,
+  "prompt_tokens": 20450,
+  "output_tokens": 305,
+  "duration_ms": 10947,
+  "cost_usd": 0.0467,
+  "model": "claude-opus-4-6",
+  "condition": "baseline",
+  "scenario": "troubleshooting",
+  "type": "procedural",
+  "lint": {
+    "type": "procedural",
+    "words": 160,
+    "sentences": 11,
+    "mean_sentence_words": 13.7,
+    "longest_sentence_words": 17,
+    "violations": {
+      "sentence_over_limit": 0,
+      "contraction": 0,
+      "banned_modal": 0,
+      "perfect_tense": 0,
+      "ing_clause": 0,
+      "semicolon": 0,
+      "latin_abbrev": 0,
+      "slop_word": 0,
+      "trailing_condition": 1,
+      "synonym_rotation": 3
+    },
+    "violations_total": 4,
+    "violations_per_100w": 2.5
+  }
+}

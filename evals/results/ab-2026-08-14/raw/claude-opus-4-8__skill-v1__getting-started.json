@@ -1,0 +1,33 @@
+{
+  "text": "**Getting started**\n\nsqlpipe moves data between SQL databases with one command. This section shows you how to install, configure, and start sqlpipe.\n\n**1. Install**\n\nInstall sqlpipe with this command:\n\n```\ncurl -sSL https://get.sqlpipe.dev | sh\n```\n\nThe script puts the `sqlpipe` binary in your path.\n\n**2. Configure**\n\nsqlpipe reads a configuration file named `sqlpipe.yaml`. This file names the source database, the target database, and the tables to move. Create `sqlpipe.yaml` in your working directory. Then add the connection details for each database.\n\n**3. First run**\n\nAfter you write the configuration file, start the first run:\n\n```\nsqlpipe run --config sqlpipe.yaml\n```\n\nsqlpipe reads the file, connects to both databases, and moves the tables. The command shows the progress of each table. When the run is complete, sqlpipe shows a summary of the rows that it moved.",
+  "input_tokens": 2,
+  "prompt_tokens": 26033,
+  "output_tokens": 311,
+  "duration_ms": 6628,
+  "cost_usd": 0.130602,
+  "model": "claude-opus-4-8",
+  "condition": "skill-v1",
+  "scenario": "getting-started",
+  "type": "procedural",
+  "lint": {
+    "type": "procedural",
+    "words": 124,
+    "sentences": 12,
+    "mean_sentence_words": 10.1,
+    "longest_sentence_words": 15,
+    "violations": {
+      "sentence_over_limit": 0,
+      "contraction": 0,
+      "banned_modal": 0,
+      "perfect_tense": 0,
+      "ing_clause": 0,
+      "semicolon": 0,
+      "latin_abbrev": 0,
+      "slop_word": 0,
+      "trailing_condition": 0,
+      "synonym_rotation": 0
+    },
+    "violations_total": 0,
+    "violations_per_100w": 0.0
+  }
+}

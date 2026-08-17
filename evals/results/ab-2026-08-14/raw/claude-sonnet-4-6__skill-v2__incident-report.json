@@ -1,0 +1,33 @@
+{
+  "text": "**Incident Report \u2014 API 502 Errors**\n**Duration:** 14:02 UTC \u2013 14:31 UTC\n\nBetween 14:02 UTC and 14:31 UTC, 12% of API requests failed with HTTP 502 errors.\n\n**Cause**\n\nA deploy at 14:02 UTC removed the cache warmup step. Without this step, the cache was empty when traffic arrived. Backend services received more requests than they could handle, and they returned 502 errors.\n\n**Resolution**\n\nWe reverted the deploy at 14:27 UTC. Cache warmup ran automatically after the revert. Error rates returned to normal by 14:31 UTC.\n\n**Next Steps**\n\nWe will add a check to prevent deploys that remove required warmup steps.",
+  "input_tokens": 3,
+  "prompt_tokens": 19977,
+  "output_tokens": 322,
+  "duration_ms": 6799,
+  "cost_usd": 0.0291102,
+  "model": "claude-sonnet-4-6",
+  "condition": "skill-v2",
+  "scenario": "incident-report",
+  "type": "descriptive",
+  "lint": {
+    "type": "descriptive",
+    "words": 100,
+    "sentences": 8,
+    "mean_sentence_words": 12.5,
+    "longest_sentence_words": 27,
+    "violations": {
+      "sentence_over_limit": 1,
+      "contraction": 0,
+      "banned_modal": 1,
+      "perfect_tense": 0,
+      "ing_clause": 0,
+      "semicolon": 0,
+      "latin_abbrev": 0,
+      "slop_word": 0,
+      "trailing_condition": 1,
+      "synonym_rotation": 0
+    },
+    "violations_total": 3,
+    "violations_per_100w": 3.0
+  }
+}

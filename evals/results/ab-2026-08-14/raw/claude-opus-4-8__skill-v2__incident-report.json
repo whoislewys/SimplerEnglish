@@ -1,0 +1,33 @@
+{
+  "text": "Between 14:02 and 14:31 UTC, 12% of API requests failed with HTTP 502 errors. A deploy at 14:02 removed the cache warmup step. This change caused the failures. We reverted the deploy at 14:27 UTC. The error rate then decreased to normal levels, and the incident ended at 14:31 UTC.\n\nAll systems now operate correctly. No data was lost during the incident. We apologize for the disruption.\n\nTo prevent this problem again, we will add a test for the cache warmup step. This test will stop a deploy that removes this step. We thank you for your patience.",
+  "input_tokens": 2,
+  "prompt_tokens": 19254,
+  "output_tokens": 194,
+  "duration_ms": 5348,
+  "cost_usd": 0.054615000000000004,
+  "model": "claude-opus-4-8",
+  "condition": "skill-v2",
+  "scenario": "incident-report",
+  "type": "descriptive",
+  "lint": {
+    "type": "descriptive",
+    "words": 98,
+    "sentences": 11,
+    "mean_sentence_words": 8.9,
+    "longest_sentence_words": 15,
+    "violations": {
+      "sentence_over_limit": 0,
+      "contraction": 0,
+      "banned_modal": 0,
+      "perfect_tense": 0,
+      "ing_clause": 0,
+      "semicolon": 0,
+      "latin_abbrev": 0,
+      "slop_word": 0,
+      "trailing_condition": 0,
+      "synonym_rotation": 0
+    },
+    "violations_total": 0,
+    "violations_per_100w": 0.0
+  }
+}

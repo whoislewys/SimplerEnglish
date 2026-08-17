@@ -1,0 +1,33 @@
+{
+  "text": "## sqlpipe Architecture Overview\n\nsqlpipe moves data from PostgreSQL to Amazon S3 through three components: a reader, a converter, and an uploader.\n\n**Reader**\n\nThe reader connects to PostgreSQL and executes a query. It fetches rows in batches to limit memory use. Each batch goes to the converter when it is full.\n\n**Converter**\n\nThe converter receives batches from the reader. It transforms each batch into a Parquet row group. Parquet is a columnar format that compresses data and makes queries faster. The converter sends each row group to the uploader.\n\n**Uploader**\n\nThe uploader writes row groups to S3 as multipart objects. It uploads each part separately. If a part fails, the uploader retries the operation. When all parts succeed, the uploader completes the multipart upload and creates the final object.",
+  "input_tokens": 10,
+  "prompt_tokens": 21040,
+  "output_tokens": 340,
+  "duration_ms": 6129,
+  "cost_usd": 0.052745,
+  "model": "claude-opus-4-5-20251101",
+  "condition": "skill-v2",
+  "scenario": "architecture",
+  "type": "descriptive",
+  "lint": {
+    "type": "descriptive",
+    "words": 125,
+    "sentences": 13,
+    "mean_sentence_words": 9.6,
+    "longest_sentence_words": 15,
+    "violations": {
+      "sentence_over_limit": 0,
+      "contraction": 0,
+      "banned_modal": 0,
+      "perfect_tense": 0,
+      "ing_clause": 0,
+      "semicolon": 0,
+      "latin_abbrev": 0,
+      "slop_word": 0,
+      "trailing_condition": 1,
+      "synonym_rotation": 0
+    },
+    "violations_total": 1,
+    "violations_per_100w": 0.8
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "text": "## Troubleshooting\n\n**Connection timeouts to Postgres**\n\nIf `sqlpipe` hangs or fails with `dial tcp: i/o timeout` when connecting to Postgres, work through these checks:\n\n- Verify the host and port are reachable from the machine running `sqlpipe` (`nc -vz <host> 5432`). Corporate VPNs and security groups are the usual culprits.\n- Confirm `sslmode` matches the server's configuration. Managed Postgres (RDS, Cloud SQL) typically requires `sslmode=require` or stricter.\n- Raise `--connect-timeout` (default 10s) for cross-region transfers.\n- Check `pg_hba.conf` allows the client IP and auth method.\n\n**S3 permission errors**\n\n`AccessDenied` or `403` responses from S3 usually trace to one of:\n\n- Missing IAM actions. Reads need `s3:GetObject` and `s3:ListBucket`; writes also need `s3:PutObject` and `s3:AbortMultipartUpload`.\n- Wrong region \u2014 `sqlpipe` will fail silently on redirects. Pass `--s3-region` explicitly.\n- Bucket policies or SCPs blocking the caller. Test with `aws s3 ls s3://<bucket>` using the same credentials.",
+  "input_tokens": 6,
+  "prompt_tokens": 27411,
+  "output_tokens": 439,
+  "duration_ms": 8221,
+  "cost_usd": 0.062127,
+  "model": "claude-opus-4-7",
+  "condition": "baseline",
+  "scenario": "troubleshooting",
+  "type": "procedural",
+  "lint": {
+    "type": "procedural",
+    "words": 138,
+    "sentences": 14,
+    "mean_sentence_words": 9.4,
+    "longest_sentence_words": 19,
+    "violations": {
+      "sentence_over_limit": 0,
+      "contraction": 0,
+      "banned_modal": 0,
+      "perfect_tense": 0,
+      "ing_clause": 0,
+      "semicolon": 1,
+      "latin_abbrev": 0,
+      "slop_word": 0,
+      "trailing_condition": 1,
+      "synonym_rotation": 2
+    },
+    "violations_total": 4,
+    "violations_per_100w": 2.9
+  }
+}

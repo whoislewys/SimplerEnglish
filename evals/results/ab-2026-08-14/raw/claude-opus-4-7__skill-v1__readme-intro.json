@@ -1,0 +1,33 @@
+{
+  "text": "sqlpipe is a command-line tool that copies tables from Postgres to Amazon S3 as Parquet files. You give it a source database, a target bucket, and a list of tables. It reads each table in chunks, writes the rows to Parquet, and uploads the files to the bucket. The tool tracks the last synced row for each table, so the next run copies only new or changed data.\n\nsqlpipe is for teams that must move operational data into a data lake without a full extract-transform-load platform. One binary runs the sync. A single configuration file holds the source, the target, and the table list. The tool writes a log line for each table and exits with a non-zero code when a sync fails.",
+  "input_tokens": 6,
+  "prompt_tokens": 35216,
+  "output_tokens": 265,
+  "duration_ms": 7285,
+  "cost_usd": 0.141389,
+  "model": "claude-opus-4-7",
+  "condition": "skill-v1",
+  "scenario": "readme-intro",
+  "type": "descriptive",
+  "lint": {
+    "type": "descriptive",
+    "words": 123,
+    "sentences": 8,
+    "mean_sentence_words": 15.4,
+    "longest_sentence_words": 20,
+    "violations": {
+      "sentence_over_limit": 0,
+      "contraction": 0,
+      "banned_modal": 0,
+      "perfect_tense": 0,
+      "ing_clause": 0,
+      "semicolon": 0,
+      "latin_abbrev": 0,
+      "slop_word": 0,
+      "trailing_condition": 1,
+      "synonym_rotation": 0
+    },
+    "violations_total": 1,
+    "violations_per_100w": 0.81
+  }
+}

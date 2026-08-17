@@ -1,0 +1,33 @@
+{
+  "text": "**Investigating Elevated 502 Errors \u2014 Resolved**\n\nBetween 14:02 and 14:31 UTC, approximately 12% of API requests failed with HTTP 502 errors. The issue was caused by a deployment that inadvertently removed a cache warmup step, leaving backend instances serving traffic before their caches were populated, resulting in intermittent gateway errors under load.\n\nOur team identified the regression and reverted the deploy at 14:27 UTC. Error rates returned to normal shortly after. No data loss occurred, and no further action is required from customers.\n\nWe're adding a deployment safeguard to ensure cache warmup completes before instances receive production traffic, preventing recurrence. We apologize for the disruption.",
+  "input_tokens": 2,
+  "prompt_tokens": 27118,
+  "output_tokens": 238,
+  "duration_ms": 4349,
+  "cost_usd": 0.0325646,
+  "model": "claude-sonnet-5",
+  "condition": "baseline",
+  "scenario": "incident-report",
+  "type": "descriptive",
+  "lint": {
+    "type": "descriptive",
+    "words": 105,
+    "sentences": 7,
+    "mean_sentence_words": 15.0,
+    "longest_sentence_words": 31,
+    "violations": {
+      "sentence_over_limit": 1,
+      "contraction": 1,
+      "banned_modal": 0,
+      "perfect_tense": 0,
+      "ing_clause": 1,
+      "semicolon": 0,
+      "latin_abbrev": 0,
+      "slop_word": 0,
+      "trailing_condition": 0,
+      "synonym_rotation": 0
+    },
+    "violations_total": 3,
+    "violations_per_100w": 2.86
+  }
+}

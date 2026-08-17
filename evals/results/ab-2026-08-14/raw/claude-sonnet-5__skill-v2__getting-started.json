@@ -1,0 +1,33 @@
+{
+  "text": "Getting Started\n\nThis section shows you how to install sqlpipe, configure it, and run your first pipeline.\n\nInstall sqlpipe\n\nRun this command in your terminal:\n\n```\ncurl -sSL https://get.sqlpipe.dev | sh\n```\n\nThis command downloads and installs sqlpipe.\n\nConfigure sqlpipe\n\nCreate a file named `sqlpipe.yaml`. Add your configuration settings to this file. The settings include your data source, your data target, and your transformation rules.\n\nRefer to the configuration guide for the full list of settings.\n\nRun sqlpipe\n\nTo start your first run, enter this command:\n\n```\nsqlpipe run --config sqlpipe.yaml\n```\n\nThis command reads `sqlpipe.yaml` and runs the pipeline. Check the terminal output for status messages and errors.\n\nIf the run fails, check these items first:\n- The file `sqlpipe.yaml` is in the current directory.\n- The YAML syntax is correct.\n- The connection settings are correct.",
+  "input_tokens": 2,
+  "prompt_tokens": 27512,
+  "output_tokens": 324,
+  "duration_ms": 4396,
+  "cost_usd": 0.0365106,
+  "model": "claude-sonnet-5",
+  "condition": "skill-v2",
+  "scenario": "getting-started",
+  "type": "procedural",
+  "lint": {
+    "type": "procedural",
+    "words": 126,
+    "sentences": 14,
+    "mean_sentence_words": 8.8,
+    "longest_sentence_words": 17,
+    "violations": {
+      "sentence_over_limit": 0,
+      "contraction": 0,
+      "banned_modal": 0,
+      "perfect_tense": 0,
+      "ing_clause": 0,
+      "semicolon": 0,
+      "latin_abbrev": 0,
+      "slop_word": 0,
+      "trailing_condition": 0,
+      "synonym_rotation": 1
+    },
+    "violations_total": 1,
+    "violations_per_100w": 0.79
+  }
+}

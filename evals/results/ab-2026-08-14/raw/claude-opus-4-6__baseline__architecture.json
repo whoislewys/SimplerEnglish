@@ -1,0 +1,33 @@
+{
+  "text": "**sqlpipe Architecture Overview**\n\nsqlpipe is a streaming pipeline that moves data from PostgreSQL to S3 in Parquet format through three concurrent stages connected by bounded channels.\n\nThe **Reader** opens a server-side cursor against PostgreSQL and fetches rows in configurable batches. Each batch is serialized into an in-memory buffer and pushed onto a channel, applying backpressure when the converter falls behind.\n\nThe **Converter** consumes row batches, maps PostgreSQL types to Parquet logical types, and assembles them into Parquet row groups. It handles schema inference or accepts a explicit schema, encoding each row group with the configured compression (Snappy, Zstd, etc.) before forwarding the finished byte buffer downstream.\n\nThe **Uploader** initiates an S3 multipart upload, writing each row group as a part. It retries individual part uploads with exponential backoff. On completion it finalizes the multipart upload; on failure it aborts, preventing orphaned parts.",
+  "input_tokens": 3,
+  "prompt_tokens": 20470,
+  "output_tokens": 226,
+  "duration_ms": 7738,
+  "cost_usd": 0.04492,
+  "model": "claude-opus-4-6",
+  "condition": "baseline",
+  "scenario": "architecture",
+  "type": "descriptive",
+  "lint": {
+    "type": "descriptive",
+    "words": 142,
+    "sentences": 8,
+    "mean_sentence_words": 17.8,
+    "longest_sentence_words": 27,
+    "violations": {
+      "sentence_over_limit": 2,
+      "contraction": 0,
+      "banned_modal": 0,
+      "perfect_tense": 0,
+      "ing_clause": 0,
+      "semicolon": 1,
+      "latin_abbrev": 1,
+      "slop_word": 0,
+      "trailing_condition": 1,
+      "synonym_rotation": 0
+    },
+    "violations_total": 5,
+    "violations_per_100w": 3.52
+  }
+}

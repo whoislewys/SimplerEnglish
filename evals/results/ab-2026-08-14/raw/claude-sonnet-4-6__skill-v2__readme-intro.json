@@ -1,0 +1,33 @@
+{
+  "text": "`sqlpipe` copies tables from a PostgreSQL database to an Amazon S3 bucket. It writes the data as Parquet files. Use `sqlpipe` when you need to move data from Postgres to a data lake or an analytics system.\n\nThe tool connects to your database, reads the rows from each table you specify, and writes the output to S3. You can run `sqlpipe` on a schedule to keep the Parquet files up to date. The tool supports full table exports and incremental exports based on a timestamp column. It does not modify your database. It only reads from it.",
+  "input_tokens": 3,
+  "prompt_tokens": 19960,
+  "output_tokens": 253,
+  "duration_ms": 5875,
+  "cost_usd": 0.010730100000000001,
+  "model": "claude-sonnet-4-6",
+  "condition": "skill-v2",
+  "scenario": "readme-intro",
+  "type": "descriptive",
+  "lint": {
+    "type": "descriptive",
+    "words": 97,
+    "sentences": 8,
+    "mean_sentence_words": 12.1,
+    "longest_sentence_words": 20,
+    "violations": {
+      "sentence_over_limit": 0,
+      "contraction": 0,
+      "banned_modal": 0,
+      "perfect_tense": 0,
+      "ing_clause": 0,
+      "semicolon": 0,
+      "latin_abbrev": 0,
+      "slop_word": 0,
+      "trailing_condition": 1,
+      "synonym_rotation": 0
+    },
+    "violations_total": 1,
+    "violations_per_100w": 1.03
+  }
+}

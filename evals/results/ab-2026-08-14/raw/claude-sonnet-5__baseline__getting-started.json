@@ -1,0 +1,33 @@
+{
+  "text": "## Getting Started\n\nInstall sqlpipe with a single command:\n\n```bash\ncurl -sSL https://get.sqlpipe.dev | sh\n```\n\nThis downloads and installs the latest sqlpipe binary for your platform.\n\nNext, create a `sqlpipe.yaml` configuration file in your project directory. This file defines your data sources, destinations, and any transformation steps sqlpipe should run. At minimum, specify a source connection, a destination connection, and the query or table you want to pipe.\n\nOnce configured, run your first pipeline:\n\n```bash\nsqlpipe run --config sqlpipe.yaml\n```\n\nsqlpipe will read your configuration, validate the connections, and execute the pipeline, streaming data from source to destination while printing progress to the console.\n\nFrom here, you can iterate on your `sqlpipe.yaml` to add transformations, schedule recurring runs, or connect additional data sources. Check `sqlpipe run --help` for additional flags like `--dry-run` and `--verbose` to help debug your pipeline before running it against production data.",
+  "input_tokens": 2,
+  "prompt_tokens": 27469,
+  "output_tokens": 345,
+  "duration_ms": 5006,
+  "cost_usd": 0.0362946,
+  "model": "claude-sonnet-5",
+  "condition": "baseline",
+  "scenario": "getting-started",
+  "type": "procedural",
+  "lint": {
+    "type": "procedural",
+    "words": 128,
+    "sentences": 9,
+    "mean_sentence_words": 14.2,
+    "longest_sentence_words": 24,
+    "violations": {
+      "sentence_over_limit": 1,
+      "contraction": 0,
+      "banned_modal": 1,
+      "perfect_tense": 0,
+      "ing_clause": 0,
+      "semicolon": 0,
+      "latin_abbrev": 0,
+      "slop_word": 0,
+      "trailing_condition": 0,
+      "synonym_rotation": 1
+    },
+    "violations_total": 3,
+    "violations_per_100w": 2.34
+  }
+}

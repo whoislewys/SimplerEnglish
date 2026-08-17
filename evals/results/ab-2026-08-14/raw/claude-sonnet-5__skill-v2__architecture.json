@@ -1,0 +1,33 @@
+{
+  "text": "The reader process reads rows from Postgres. It reads the rows in batches. The reader process sends each batch to the converter.\n\nThe converter changes each batch into a Parquet row group. Parquet is a column-based file format. This format makes queries fast and storage small.\n\nThe uploader sends each row group to S3. The uploader uses multipart upload. Multipart upload splits a file into parts. The uploader sends the parts as separate objects.\n\nIf a part transfer fails, the uploader tries again. This retry logic makes the pipeline resistant to network errors.\n\nThe reader, the converter, and the uploader run as separate stages. Data flows from one stage to the next stage. This design lets each stage run at its own speed.",
+  "input_tokens": 2,
+  "prompt_tokens": 27487,
+  "output_tokens": 225,
+  "duration_ms": 4598,
+  "cost_usd": 0.034878599999999996,
+  "model": "claude-sonnet-5",
+  "condition": "skill-v2",
+  "scenario": "architecture",
+  "type": "descriptive",
+  "lint": {
+    "type": "descriptive",
+    "words": 123,
+    "sentences": 15,
+    "mean_sentence_words": 8.2,
+    "longest_sentence_words": 11,
+    "violations": {
+      "sentence_over_limit": 0,
+      "contraction": 0,
+      "banned_modal": 0,
+      "perfect_tense": 0,
+      "ing_clause": 0,
+      "semicolon": 0,
+      "latin_abbrev": 0,
+      "slop_word": 0,
+      "trailing_condition": 0,
+      "synonym_rotation": 0
+    },
+    "violations_total": 0,
+    "violations_per_100w": 0.0
+  }
+}

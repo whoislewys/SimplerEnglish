@@ -1,0 +1,33 @@
+{
+  "text": "## Troubleshooting\n\n### Connection Timeouts to Postgres\n\nsqlpipe waits 30 seconds for a Postgres connection. If the connection does not start, sqlpipe stops and shows a timeout error.\n\nDo these checks:\n\n1. Make sure that the Postgres host and port are correct in your connection string.\n2. Make sure that the database server is running. Use `pg_isready -h <host> -p <port>` to test.\n3. If a firewall is between sqlpipe and the database, open the correct port.\n4. If you connect through a VPN or SSH tunnel, make sure that the tunnel is active.\n\nTo increase the timeout, set the `--timeout` flag to a higher value in seconds.\n\n### S3 Permission Errors\n\nsqlpipe uses your AWS credentials to read from or write to S3. If you get an \"Access Denied\" error, do these checks:\n\n1. Make sure that the `AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY` variables are set.\n2. Make sure that your IAM policy permits `s3:GetObject` and `s3:PutObject` on the target bucket.\n3. If the bucket uses a custom KMS key, add `kms:Decrypt` to your IAM policy.\n4. If you set a `--region` flag, make sure that it matches the bucket region.\n\nRun `aws sts get-caller-identity` to confirm which credentials are active.",
+  "input_tokens": 3,
+  "prompt_tokens": 20738,
+  "output_tokens": 471,
+  "duration_ms": 11003,
+  "cost_usd": 0.054008,
+  "model": "claude-opus-4-6",
+  "condition": "skill-v2",
+  "scenario": "troubleshooting",
+  "type": "procedural",
+  "lint": {
+    "type": "procedural",
+    "words": 183,
+    "sentences": 16,
+    "mean_sentence_words": 10.9,
+    "longest_sentence_words": 16,
+    "violations": {
+      "sentence_over_limit": 0,
+      "contraction": 0,
+      "banned_modal": 0,
+      "perfect_tense": 0,
+      "ing_clause": 0,
+      "semicolon": 0,
+      "latin_abbrev": 0,
+      "slop_word": 0,
+      "trailing_condition": 0,
+      "synonym_rotation": 1
+    },
+    "violations_total": 1,
+    "violations_per_100w": 0.55
+  }
+}

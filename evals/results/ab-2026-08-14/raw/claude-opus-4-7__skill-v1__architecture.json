@@ -1,0 +1,33 @@
+{
+  "text": "sqlpipe moves rows from Postgres to S3 as Parquet objects. Three processes run in a pipeline and pass batches through a bounded queue.\n\nThe reader opens a cursor on the source database. It fetches rows in fixed-size batches and puts each batch on the queue.\n\nThe converter takes a batch from the queue. It maps each Postgres type to a Parquet type and writes the batch as one Parquet row group. The converter groups row groups into a Parquet file of a target size.\n\nThe uploader sends each finished file to S3 as a multipart object. It retries a failed part with an exponential backoff. After the last part, the uploader completes the multipart upload and records the object key.\n\nThe queue applies backpressure when a downstream process is slow.",
+  "input_tokens": 6,
+  "prompt_tokens": 34898,
+  "output_tokens": 282,
+  "duration_ms": 6305,
+  "cost_usd": 0.13863299999999998,
+  "model": "claude-opus-4-7",
+  "condition": "skill-v1",
+  "scenario": "architecture",
+  "type": "descriptive",
+  "lint": {
+    "type": "descriptive",
+    "words": 130,
+    "sentences": 11,
+    "mean_sentence_words": 11.8,
+    "longest_sentence_words": 18,
+    "violations": {
+      "sentence_over_limit": 0,
+      "contraction": 0,
+      "banned_modal": 0,
+      "perfect_tense": 0,
+      "ing_clause": 0,
+      "semicolon": 0,
+      "latin_abbrev": 0,
+      "slop_word": 0,
+      "trailing_condition": 1,
+      "synonym_rotation": 0
+    },
+    "violations_total": 1,
+    "violations_per_100w": 0.77
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "text": "sqlpipe copies Postgres tables to S3 as Parquet files. It reads a table with a query, converts the rows to Parquet, and writes the file to an S3 bucket. Use sqlpipe for scheduled exports, data lake ingestion, and one-time table dumps.\n\nsqlpipe runs from the command line with a single configuration file. The configuration file defines the source connection, the target table or query, and the destination bucket. sqlpipe supports incremental syncs with a watermark column, so a scheduled run copies only new or changed rows. It handles large tables through paged reads, and it writes Parquet files with compression by default.",
+  "input_tokens": 2,
+  "prompt_tokens": 34895,
+  "output_tokens": 206,
+  "duration_ms": 4796,
+  "cost_usd": 0.0842956,
+  "model": "claude-sonnet-5",
+  "condition": "skill-v1",
+  "scenario": "readme-intro",
+  "type": "descriptive",
+  "lint": {
+    "type": "descriptive",
+    "words": 102,
+    "sentences": 7,
+    "mean_sentence_words": 14.6,
+    "longest_sentence_words": 20,
+    "violations": {
+      "sentence_over_limit": 0,
+      "contraction": 0,
+      "banned_modal": 0,
+      "perfect_tense": 0,
+      "ing_clause": 0,
+      "semicolon": 0,
+      "latin_abbrev": 0,
+      "slop_word": 0,
+      "trailing_condition": 0,
+      "synonym_rotation": 0
+    },
+    "violations_total": 0,
+    "violations_per_100w": 0.0
+  }
+}

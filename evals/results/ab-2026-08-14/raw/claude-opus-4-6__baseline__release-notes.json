@@ -1,0 +1,33 @@
+{
+  "text": "# sqlpipe v2.0 Release Notes\n\n## Breaking Changes\n\n- **User name field split:** The `name` field on `/v2/users` has been replaced with separate `first_name` and `last_name` fields. Clients that read or write the `name` field must update to use the new fields. There is no automatic migration \u2014 existing integrations will need to handle the split at the application level.\n\n## New Features\n\n- **Incremental syncs:** The new `--incremental` flag enables delta-based transfers, syncing only rows that have changed since the last run. This significantly reduces transfer times and resource usage for large, append-heavy tables.\n\n## Performance\n\n- **Parquet writes are 40% faster.** Internal buffering and encoding improvements cut write times across all supported Parquet compression modes. No configuration changes are required \u2014 the speedup applies automatically on upgrade.",
+  "input_tokens": 3,
+  "prompt_tokens": 20480,
+  "output_tokens": 200,
+  "duration_ms": 6721,
+  "cost_usd": 0.044405,
+  "model": "claude-opus-4-6",
+  "condition": "baseline",
+  "scenario": "release-notes",
+  "type": "descriptive",
+  "lint": {
+    "type": "descriptive",
+    "words": 116,
+    "sentences": 7,
+    "mean_sentence_words": 16.1,
+    "longest_sentence_words": 19,
+    "violations": {
+      "sentence_over_limit": 0,
+      "contraction": 0,
+      "banned_modal": 0,
+      "perfect_tense": 2,
+      "ing_clause": 0,
+      "semicolon": 0,
+      "latin_abbrev": 0,
+      "slop_word": 0,
+      "trailing_condition": 0,
+      "synonym_rotation": 0
+    },
+    "violations_total": 2,
+    "violations_per_100w": 1.72
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "text": "Between 14:02 and 14:31 UTC, approximately 12% of API requests failed with HTTP 502 errors. The cause was a deploy that inadvertently removed a cache warmup step, leaving backend services unable to serve a portion of incoming traffic reliably. Our team identified the issue and reverted the deploy at 14:27 UTC, after which error rates began returning to normal, with full recovery by 14:31 UTC. We apologize for the disruption and any impact to your services. To prevent recurrence, we are adding safeguards to our deploy process to ensure critical warmup steps cannot be omitted. Thank you for your patience.",
+  "input_tokens": 2,
+  "prompt_tokens": 18880,
+  "output_tokens": 212,
+  "duration_ms": 4455,
+  "cost_usd": 0.051027,
+  "model": "claude-opus-4-8",
+  "condition": "baseline",
+  "scenario": "incident-report",
+  "type": "descriptive",
+  "lint": {
+    "type": "descriptive",
+    "words": 100,
+    "sentences": 6,
+    "mean_sentence_words": 16.7,
+    "longest_sentence_words": 26,
+    "violations": {
+      "sentence_over_limit": 1,
+      "contraction": 0,
+      "banned_modal": 0,
+      "perfect_tense": 0,
+      "ing_clause": 0,
+      "semicolon": 0,
+      "latin_abbrev": 0,
+      "slop_word": 0,
+      "trailing_condition": 0,
+      "synonym_rotation": 0
+    },
+    "violations_total": 1,
+    "violations_per_100w": 1.0
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "text": "## sqlpipe v2.0\n\n### Breaking change: /v2/users field split\n\nWARNING: The `name` field in `/v2/users` responses no longer exists. Before you upgrade, change each reference from `name` to `first_name` or `last_name`.\n\nThe `/v2/users` endpoint now returns two fields: `first_name` and `last_name`. If your code reads the `name` field, it will not find the data.\n\n### New: --incremental flag\n\nThe `--incremental` flag tells sqlpipe to transfer only new or changed rows. Use it on large tables where most rows do not change between runs. This reduces transfer time and database load.\n\n### Parquet write performance\n\nParquet writes are 40% faster in v2.0. No configuration change is needed.",
+  "input_tokens": 3,
+  "prompt_tokens": 25247,
+  "output_tokens": 1408,
+  "duration_ms": 22303,
+  "cost_usd": 0.08230520000000001,
+  "model": "claude-sonnet-4-6",
+  "condition": "skill-v1",
+  "scenario": "release-notes",
+  "type": "descriptive",
+  "lint": {
+    "type": "descriptive",
+    "words": 91,
+    "sentences": 10,
+    "mean_sentence_words": 9.0,
+    "longest_sentence_words": 13,
+    "violations": {
+      "sentence_over_limit": 0,
+      "contraction": 0,
+      "banned_modal": 0,
+      "perfect_tense": 0,
+      "ing_clause": 0,
+      "semicolon": 0,
+      "latin_abbrev": 0,
+      "slop_word": 0,
+      "trailing_condition": 0,
+      "synonym_rotation": 0
+    },
+    "violations_total": 0,
+    "violations_per_100w": 0.0
+  }
+}

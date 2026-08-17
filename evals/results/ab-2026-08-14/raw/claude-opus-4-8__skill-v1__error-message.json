@@ -1,0 +1,33 @@
+{
+  "text": "```\nsqlpipe stopped. The S3 upload failed with AccessDenied.\nCause: the IAM credentials do not have the s3:PutObject permission.\nAdd the s3:PutObject permission to the IAM policy for the target bucket. Then run the command again.\n```",
+  "input_tokens": 2,
+  "prompt_tokens": 26324,
+  "output_tokens": 118,
+  "duration_ms": 4445,
+  "cost_usd": 0.12866300000000003,
+  "model": "claude-opus-4-8",
+  "condition": "skill-v1",
+  "scenario": "error-message",
+  "type": "procedural",
+  "lint": {
+    "type": "procedural",
+    "words": 1,
+    "sentences": 0,
+    "mean_sentence_words": 0.0,
+    "longest_sentence_words": 0,
+    "violations": {
+      "sentence_over_limit": 0,
+      "contraction": 0,
+      "banned_modal": 0,
+      "perfect_tense": 0,
+      "ing_clause": 0,
+      "semicolon": 0,
+      "latin_abbrev": 0,
+      "slop_word": 0,
+      "trailing_condition": 0,
+      "synonym_rotation": 0
+    },
+    "violations_total": 0,
+    "violations_per_100w": 0.0
+  }
+}

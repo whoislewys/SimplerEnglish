@@ -1,0 +1,33 @@
+{
+  "text": "# sqlpipe v2.0 Release Notes\n\n## Breaking change\n\nThe `name` field in `/v2/users` is now two separate fields: `first_name` and `last_name`. The API does not return or accept the old `name` field.\n\nCAUTION: Update all code that reads or writes `name` before you upgrade. Requests that send the old field return a `400` error.\n\n## Incremental transfers\n\nThe new `--incremental` flag transfers only the rows that changed since the last run. Add the flag to any transfer command:\n\n```\nsqlpipe transfer --incremental\n```\n\nsqlpipe uses the `updated_at` column by default. To use a different column, set `incremental_key` in the configuration.\n\n## Performance\n\nParquet writes are 40% faster. The improvement applies to all output formats that use the Parquet writer.",
+  "input_tokens": 3,
+  "prompt_tokens": 26036,
+  "output_tokens": 939,
+  "duration_ms": 19035,
+  "cost_usd": 0.124006,
+  "model": "claude-opus-4-6",
+  "condition": "skill-v1",
+  "scenario": "release-notes",
+  "type": "descriptive",
+  "lint": {
+    "type": "descriptive",
+    "words": 102,
+    "sentences": 11,
+    "mean_sentence_words": 9.2,
+    "longest_sentence_words": 14,
+    "violations": {
+      "sentence_over_limit": 0,
+      "contraction": 0,
+      "banned_modal": 0,
+      "perfect_tense": 0,
+      "ing_clause": 0,
+      "semicolon": 0,
+      "latin_abbrev": 0,
+      "slop_word": 0,
+      "trailing_condition": 0,
+      "synonym_rotation": 0
+    },
+    "violations_total": 0,
+    "violations_per_100w": 0.0
+  }
+}

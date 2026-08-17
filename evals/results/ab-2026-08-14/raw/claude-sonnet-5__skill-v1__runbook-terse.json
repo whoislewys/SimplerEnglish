@@ -1,0 +1,33 @@
+{
+  "text": "If the network is slow, increase `source.connect_timeout_seconds` in the configuration.\n\nWait \u2014 that doesn't match the task. Here is the correct rewrite:\n\nBefore you run the migration, make sure that the backup exists.",
+  "input_tokens": 2,
+  "prompt_tokens": 34874,
+  "output_tokens": 75,
+  "duration_ms": 2903,
+  "cost_usd": 0.0821776,
+  "model": "claude-sonnet-5",
+  "condition": "skill-v1",
+  "scenario": "runbook-terse",
+  "type": "procedural",
+  "lint": {
+    "type": "procedural",
+    "words": 33,
+    "sentences": 4,
+    "mean_sentence_words": 8.2,
+    "longest_sentence_words": 11,
+    "violations": {
+      "sentence_over_limit": 0,
+      "contraction": 1,
+      "banned_modal": 0,
+      "perfect_tense": 0,
+      "ing_clause": 0,
+      "semicolon": 0,
+      "latin_abbrev": 0,
+      "slop_word": 0,
+      "trailing_condition": 0,
+      "synonym_rotation": 0
+    },
+    "violations_total": 1,
+    "violations_per_100w": 3.03
+  }
+}

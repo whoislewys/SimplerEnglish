@@ -1,0 +1,33 @@
+{
+  "text": "## SQLPipe v2.0 Release Notes\n\n**Breaking Change: User Name Field Split**\nThe `name` field on `/v2/users` responses has been replaced by separate `first_name` and `last_name` fields. Update any code that reads or maps the `name` field accordingly.\n\n**New: `--incremental` Flag**\nThe new `--incremental` flag enables incremental data loads, processing only new or updated records since the last run. This reduces transfer times and resource usage for large, frequently-updated datasets.\n\n**Performance: 40% Faster Parquet Writes**\nParquet write throughput has improved by approximately 40%, significantly cutting pipeline runtime for columnar output workloads.\n\n**Upgrading**\nReview any integrations that consume `/v2/users` and update field references before migrating from v1.x. No other breaking changes are included in this release.",
+  "input_tokens": 3,
+  "prompt_tokens": 19934,
+  "output_tokens": 205,
+  "duration_ms": 5545,
+  "cost_usd": 0.0268262,
+  "model": "claude-sonnet-4-6",
+  "condition": "baseline",
+  "scenario": "release-notes",
+  "type": "descriptive",
+  "lint": {
+    "type": "descriptive",
+    "words": 109,
+    "sentences": 8,
+    "mean_sentence_words": 13.4,
+    "longest_sentence_words": 20,
+    "violations": {
+      "sentence_over_limit": 0,
+      "contraction": 0,
+      "banned_modal": 0,
+      "perfect_tense": 2,
+      "ing_clause": 0,
+      "semicolon": 0,
+      "latin_abbrev": 0,
+      "slop_word": 0,
+      "trailing_condition": 0,
+      "synonym_rotation": 0
+    },
+    "violations_total": 2,
+    "violations_per_100w": 1.83
+  }
+}
